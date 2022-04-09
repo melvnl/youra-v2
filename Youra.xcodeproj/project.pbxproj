@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B088AB262801A597007CFCF6 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B088AB252801A597007CFCF6 /* settingViewController.swift */; };
+		B0D2C22A2801DE1300C2DDD7 /* historyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D2C2292801DE1300C2DDD7 /* historyViewController.swift */; };
 		B5E6FEA827FDA97100350A57 /* pickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6FEA727FDA97100350A57 /* pickerViewController.swift */; };
 		DB9DC3CA27FABAA9002F048D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9DC3C927FABAA9002F048D /* AppDelegate.swift */; };
 		DB9DC3CC27FABAA9002F048D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9DC3CB27FABAA9002F048D /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		B088AB252801A597007CFCF6 /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
+		B0D2C2292801DE1300C2DDD7 /* historyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyViewController.swift; sourceTree = "<group>"; };
 		B5E6FEA727FDA97100350A57 /* pickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pickerViewController.swift; sourceTree = "<group>"; };
 		DB9DC3C627FABAA9002F048D /* Youra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Youra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9DC3C927FABAA9002F048D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 				B088AB252801A597007CFCF6 /* settingViewController.swift */,
 			);
 			path = settingGroup;
+			sourceTree = "<group>";
+		};
+		B0D2C2282801DE0300C2DDD7 /* historyGroup */ = {
+			isa = PBXGroup;
+			children = (
+				B0D2C2292801DE1300C2DDD7 /* historyViewController.swift */,
+			);
+			path = historyGroup;
 			sourceTree = "<group>";
 		};
 		B514F7DF27FFDBD300C8020B /* homeGroup */ = {
@@ -78,6 +88,7 @@
 		DB9DC3C827FABAA9002F048D /* Youra */ = {
 			isa = PBXGroup;
 			children = (
+				B0D2C2282801DE0300C2DDD7 /* historyGroup */,
 				B088AB242801A572007CFCF6 /* settingGroup */,
 				DB9DC3C927FABAA9002F048D /* AppDelegate.swift */,
 				DB9DC3CB27FABAA9002F048D /* SceneDelegate.swift */,
@@ -165,6 +176,7 @@
 				B088AB262801A597007CFCF6 /* settingViewController.swift in Sources */,
 				B5E6FEA827FDA97100350A57 /* pickerViewController.swift in Sources */,
 				DB9DC3CC27FABAA9002F048D /* SceneDelegate.swift in Sources */,
+				B0D2C22A2801DE1300C2DDD7 /* historyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
