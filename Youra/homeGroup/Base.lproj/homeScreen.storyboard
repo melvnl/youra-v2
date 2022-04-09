@@ -21,12 +21,47 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="9sU-bR-Um3"/>
+                        <segue destination="Of4-8J-EpB" kind="relationship" relationship="viewControllers" id="zDp-GQ-9GK"/>
                         <segue destination="J4l-yv-AfC" kind="relationship" relationship="viewControllers" id="RzJ-ET-CYL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qsn-pb-jTa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1834" y="-305"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="zpc-g3-IJE">
+            <objects>
+                <viewController title="History" id="Of4-8J-EpB" customClass="historyViewController" customModule="Youra" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BLr-F5-B6G">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homeScreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Gyf-2G-aeq">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headerHomeScreen" translatesAutoresizingMaskIntoConstraints="NO" id="Pfk-9n-DGV">
+                                <rect key="frame" x="-11" y="0.0" width="413" height="220"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgT-Oj-7Xy">
+                                <rect key="frame" x="32" y="90" width="116" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" red="0.32156862749999998" green="0.29411764709999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uzq-eH-vNF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="CvJ-vS-3Ma"/>
+                    <navigationItem key="navigationItem" id="beO-NC-hTt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dh9-iQ-qyZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-861" y="-753"/>
         </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
