@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B088AB262801A597007CFCF6 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B088AB252801A597007CFCF6 /* settingViewController.swift */; };
 		B5E6FEA827FDA97100350A57 /* pickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6FEA727FDA97100350A57 /* pickerViewController.swift */; };
+		DB933BAF2801CB7E0019411A /* WorkSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB933BAE2801CB7E0019411A /* WorkSessionViewController.swift */; };
 		DB9DC3CA27FABAA9002F048D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9DC3C927FABAA9002F048D /* AppDelegate.swift */; };
 		DB9DC3CC27FABAA9002F048D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9DC3CB27FABAA9002F048D /* SceneDelegate.swift */; };
 		DB9DC3CE27FABAA9002F048D /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9DC3CD27FABAA9002F048D /* homeViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		B088AB252801A597007CFCF6 /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 		B5E6FEA727FDA97100350A57 /* pickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pickerViewController.swift; sourceTree = "<group>"; };
+		DB933BAE2801CB7E0019411A /* WorkSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSessionViewController.swift; sourceTree = "<group>"; };
 		DB9DC3C627FABAA9002F048D /* Youra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Youra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9DC3C927FABAA9002F048D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB9DC3CB27FABAA9002F048D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,14 @@
 			path = homeGroup;
 			sourceTree = "<group>";
 		};
+		DB933BAD2801CB0B0019411A /* sessionsGroup */ = {
+			isa = PBXGroup;
+			children = (
+				DB933BAE2801CB7E0019411A /* WorkSessionViewController.swift */,
+			);
+			path = sessionsGroup;
+			sourceTree = "<group>";
+		};
 		DB9DC3BD27FABAA9002F048D = {
 			isa = PBXGroup;
 			children = (
@@ -78,9 +88,10 @@
 		DB9DC3C827FABAA9002F048D /* Youra */ = {
 			isa = PBXGroup;
 			children = (
-				B088AB242801A572007CFCF6 /* settingGroup */,
+				DB933BAD2801CB0B0019411A /* sessionsGroup */,
 				DB9DC3C927FABAA9002F048D /* AppDelegate.swift */,
 				DB9DC3CB27FABAA9002F048D /* SceneDelegate.swift */,
+				B088AB242801A572007CFCF6 /* settingGroup */,
 				B514F7DF27FFDBD300C8020B /* homeGroup */,
 				DB9DC3D227FABAAA002F048D /* Assets.xcassets */,
 				DB9DC3D427FABAAA002F048D /* LaunchScreen.storyboard */,
@@ -164,6 +175,7 @@
 				DB9DC3CA27FABAA9002F048D /* AppDelegate.swift in Sources */,
 				B088AB262801A597007CFCF6 /* settingViewController.swift in Sources */,
 				B5E6FEA827FDA97100350A57 /* pickerViewController.swift in Sources */,
+				DB933BAF2801CB7E0019411A /* WorkSessionViewController.swift in Sources */,
 				DB9DC3CC27FABAA9002F048D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
