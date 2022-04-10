@@ -1,49 +1,49 @@
 //
-//  WorkSessionViewController.swift
+//  RestSessionViewController.swift
 //  Youra
 //
-//  Created by Stephen Giovanni Saputra on 09/04/22.
+//  Created by Stephen Giovanni Saputra on 10/04/22.
 //
 
 import UIKit
 
-class WorkSessionViewController: UIViewController {
+class RestSessionViewController: UIViewController {
     
     var backgrounds: [Background] = []
     var quotes: [Quote] = []
     
-    @IBOutlet weak var imageBackground: UIImageView!
     @IBOutlet weak var circularView: UIView!
-    @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var endSessionButton: UIButton!
+    @IBOutlet weak var restTimerLabel: UILabel!
+    @IBOutlet weak var endRestSessionButton: UIButton!
+    @IBOutlet weak var imageBackground: UIImageView!
     @IBOutlet weak var quotesLabel: UILabel!
     
     let foregroundLayer = CAShapeLayer()
     let backgroundLayer = CAShapeLayer()
-    var randNumber: Int = 0
+    var randNumber: Int = 1
     var quotesRandNumber: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Generate Data
+        // Generate Data from Seeder
         backgrounds = BackgroundSeeder().generateData()
         quotes = BackgroundSeeder().generateQuotes()
         
         // Set View
         randomizeNumber()
         
-        timerLabel.text = "WORK"
-        timerLabel.textColor = backgrounds[randNumber].timerLabelColor
+        restTimerLabel.text = "REST"
+        restTimerLabel.textColor = backgrounds[randNumber].timerLabelColor
         
         imageBackground.image = backgrounds[randNumber].bgTitle
         
         quotesLabel.text = quotes[quotesRandNumber].quote
         
-        endSessionButton.layer.shadowColor = UIColor.black.cgColor
-        endSessionButton.layer.shadowOffset = CGSize(width: 0, height: 0)
-        endSessionButton.layer.shadowRadius = 5
-        endSessionButton.layer.shadowOpacity = 0.2
+        endRestSessionButton.layer.shadowColor = UIColor.black.cgColor
+        endRestSessionButton.layer.shadowOffset = CGSize(width: 0, height: 0)
+        endRestSessionButton.layer.shadowRadius = 5
+        endRestSessionButton.layer.shadowOpacity = 0.2
         
         circularView.layer.cornerRadius = circularView.frame.size.width/2
         circularView.clipsToBounds = true
@@ -59,7 +59,6 @@ class WorkSessionViewController: UIViewController {
             endAngle: (-CGFloat.pi / 2) + 2 * CGFloat.pi,
             clockwise: true)
         
-        // Progress Bar
         backgroundLayer.path = circularPath.cgPath
         backgroundLayer.lineWidth = 5
         backgroundLayer.strokeColor = backgrounds[randNumber].backgroundLayerColor.cgColor
@@ -68,6 +67,7 @@ class WorkSessionViewController: UIViewController {
         
         view.layer.addSublayer(backgroundLayer)
         
+        // Progress nya
         foregroundLayer.path = circularPath.cgPath
         foregroundLayer.lineWidth = 5
         foregroundLayer.strokeColor = backgrounds[randNumber].foregroundLayerColor.cgColor
@@ -103,7 +103,7 @@ class WorkSessionViewController: UIViewController {
     func showAlert() {
         
         let alert = UIAlertController(
-            title: "End work session?",
+            title: "End rest session?",
             message: "You will end session earlier than the duration you have set up.",
             preferredStyle: .alert
         )
@@ -119,7 +119,7 @@ class WorkSessionViewController: UIViewController {
                 self.circularView.backgroundColor = self.backgrounds[self.randNumber].circularViewColor
                 self.backgroundLayer.strokeColor = self.backgrounds[self.randNumber].backgroundLayerColor.cgColor
                 self.foregroundLayer.strokeColor = self.backgrounds[self.randNumber].foregroundLayerColor.cgColor
-                self.timerLabel.textColor = self.backgrounds[self.randNumber].timerLabelColor
+                self.restTimerLabel.textColor = self.backgrounds[self.randNumber].timerLabelColor
                 self.quotesLabel.text = self.quotes[self.quotesRandNumber].quote
                 self.playAnimation()
             })
