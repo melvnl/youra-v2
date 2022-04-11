@@ -13,16 +13,31 @@ class homeViewController: UIViewController {
     @IBOutlet weak var restLabel: UILabel!
     
     @IBOutlet weak var usernameLabel: UILabel!
-
+    @IBOutlet weak var goodLabel: UILabel!
+    
     var workDuration: TimeInterval? = 0
     var restDuration: TimeInterval? = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Home Screen Loaded")
+        
+        let date = Date()
+        let hour = (Calendar.current.component(.hour, from: date))
+        
+        switch hour {
+          case 5...11:
+            goodLabel.text = "Good Morning"
 
-        //Set Display Name
+          case 12...17:
+            goodLabel.text = "Good Afternoon"
+
+          default:
+            goodLabel.text = "Good Evening"
+        }
+        
         usernameLabel.text = UserDefaultManager.shared.defaults.value(forKey: "username") as? String
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.funcName), name: NSNotification.Name(rawValue: "pickerClosed"), object: nil)
         
