@@ -198,16 +198,12 @@ class CustomModalViewController: UIViewController {
         UIView.animate(withDuration: 0.4) {
             self.dimmedView.alpha = 0
         } completion: { _ in
-           
+
+            print(self.timePicker.countDownDuration)
             if self.parentButton == "work"{
-                if  let homeScreen = self.presentingViewController as? homeViewController{
-                    homeScreen.workDuration = self.timePicker.countDownDuration
-                }
-            }
-            else if self.parentButton == "rest"{
-                if  let homeScreen = self.presentingViewController as? homeViewController{
-                    homeScreen.restDuration = self.timePicker.countDownDuration
-                }
+                UserDefaultManager.shared.defaults.set(self.timePicker.countDownDuration, forKey: "workSession")
+            } else if self.parentButton == "rest"{
+                UserDefaultManager.shared.defaults.set(self.timePicker.countDownDuration, forKey: "restSession")
             }
             
             // once done, dismiss without animation
