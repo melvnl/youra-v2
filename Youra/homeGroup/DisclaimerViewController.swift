@@ -17,9 +17,6 @@ class DisclaimerViewController: UIViewController {
 
 
 	@IBAction func proceedClick(_ sender: Any) {
-		let storyboard = UIStoryboard(name: "homeScreen", bundle: nil)
-		let vc = storyboard.instantiateViewController(withIdentifier: "homeVC") as UIViewController
-		vc.modalPresentationStyle = .fullScreen
-		present(vc, animated: true, completion: nil)
+		
 	}
 }

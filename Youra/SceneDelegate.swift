@@ -22,16 +22,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //		UserDefaults.standard.removePersistentDomain(forName: "com.youra.saved.data")
 //		UserDefaults.standard.synchronize()
 
-		let username = UserDefaultManager.shared.defaults.value(forKey: "username") as? String
-        
-        // Cek apakah setup page perlu ditampilkan
-        let identifier  = (username == nil) ? "privacyPolicyVC" : "homeVC"
-
-        
-        let mainStoryBoard = UIStoryboard(name: "homeScreen", bundle: nil)
-        let viewController = mainStoryBoard.instantiateViewController(withIdentifier: identifier)
-        
-        window?.rootViewController = viewController
+//		let username = UserDefaultManager.shared.defaults.value(forKey: "username") as? String
+//        
+//        // Cek apakah setup page perlu ditampilkan
+//        let identifier  = (username == nil) ? "privacyPolicyVC" : "homeVC"
+//
+//        
+//        let mainStoryBoard = UIStoryboard(name: "homeScreen", bundle: nil)
+//        let viewController = mainStoryBoard.instantiateViewController(withIdentifier: identifier)
+//        
+//        window?.rootViewController = viewController
         
     }
     

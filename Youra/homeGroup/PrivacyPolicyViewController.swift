@@ -31,14 +31,8 @@ class PrivacyPolicyViewController: UIViewController {
     }
 
     @IBAction func nextBtnClick() {
+        
         UserDefaultManager.shared.defaults.setValue(usernameTF.text, forKey: "username")
-		guard let vc = storyboard?.instantiateViewController(withIdentifier: "disclaimerVC") as? DisclaimerViewController else {
-			return
-		}
-		vc.modalPresentationStyle = .fullScreen
-		present(vc, animated: true)
-
-		
     }
 
     func invalidUsername(_ value: String) -> String? {

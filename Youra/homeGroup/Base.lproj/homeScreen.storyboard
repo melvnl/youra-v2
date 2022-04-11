@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UUd-eZ-f3i">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -65,6 +65,7 @@
                                 <buttonConfiguration key="configuration" style="plain" image="btn_next"/>
                                 <connections>
                                     <action selector="nextBtnClick" destination="CpC-S8-J8a" eventType="touchUpInside" id="yn8-ub-uCt"/>
+                                    <segue destination="RaL-IW-20x" kind="show" id="m7Z-2r-QHW"/>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please fill this field with your name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfO-8n-dKy">
@@ -104,6 +105,8 @@
                             <constraint firstItem="lfO-8n-dKy" firstAttribute="top" secondItem="V4F-MP-0Ly" secondAttribute="bottom" constant="5" id="zum-4O-ZwD"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="WJh-0y-99I"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="btnNext" destination="AIr-O3-kJH" id="CWc-w5-8Yu"/>
                         <outlet property="usernameErrorLabel" destination="lfO-8n-dKy" id="e4Z-os-57Z"/>
@@ -112,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pra-pw-bLM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3763" y="-370"/>
+            <point key="canvasLocation" x="-2833.8461538461538" y="-370.37914691943126"/>
         </scene>
         <!--Disclaimer View Controller-->
         <scene sceneID="D7h-vo-QYH">
@@ -147,6 +150,7 @@
                                 <buttonConfiguration key="configuration" style="plain" image="btn_proceed"/>
                                 <connections>
                                     <action selector="proceedClick:" destination="RaL-IW-20x" eventType="touchUpInside" id="Oot-61-ZOr"/>
+                                    <segue destination="w6D-s7-WCe" kind="show" id="Z7S-d0-sZE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="can help reduce daily acute stresses " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggG-Rq-x4m">
@@ -197,15 +201,18 @@ We suggest you to look for professional help if you have high level of stress.</
                             <constraint firstItem="EQE-IX-hgD" firstAttribute="trailing" secondItem="ggG-Rq-x4m" secondAttribute="trailing" constant="20" id="ytv-9V-AeP"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="SYt-S1-m21"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FmI-70-3dh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2834" y="-370"/>
+            <point key="canvasLocation" x="-1906.1538461538462" y="-370.37914691943126"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tEJ-Ab-sUb">
             <objects>
                 <tabBarController id="w6D-s7-WCe" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DjN-F5-Geu"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q1y-4A-f6P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -221,7 +228,7 @@ We suggest you to look for professional help if you have high level of stress.</
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qsn-pb-jTa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1834" y="-305"/>
+            <point key="canvasLocation" x="-906.15384615384608" y="-305.68720379146919"/>
         </scene>
         <!--History-->
         <scene sceneID="zpc-g3-IJE">
@@ -255,7 +262,7 @@ We suggest you to look for professional help if you have high level of stress.</
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dh9-iQ-qyZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-861" y="-753"/>
+            <point key="canvasLocation" x="67.692307692307693" y="-753.55450236966817"/>
         </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
@@ -403,7 +410,7 @@ We suggest you to look for professional help if you have high level of stress.</
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="27.69230769230769" y="54.739336492890992"/>
+            <point key="canvasLocation" x="956.92307692307691" y="54.739336492890992"/>
         </scene>
         <!--Setting-->
         <scene sceneID="bOx-ne-BbY">
@@ -488,13 +495,31 @@ We suggest you to look for professional help if you have high level of stress.</
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9A-Np-E4d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="736.92307692307691" y="-665.40284360189571"/>
+            <point key="canvasLocation" x="1666.1538461538462" y="-665.40284360189571"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="w6t-sp-sRe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UUd-eZ-f3i" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pd7-JN-vuW">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CpC-S8-J8a" kind="relationship" relationship="rootViewController" id="HcJ-iw-ooR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fq5-Kb-p67" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3763.0769230769229" y="-370.37914691943126"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Avatar" width="133" height="133"/>
         <image name="btn_next" width="363" height="64"/>
         <image name="btn_proceed" width="363" height="64"/>
-        <image name="Avatar" width="133" height="133"/>
         <image name="buttonSessionHome" width="76" height="151"/>
         <image name="buttonStartSession" width="180" height="180"/>
         <image name="gear" catalog="system" width="128" height="119"/>
