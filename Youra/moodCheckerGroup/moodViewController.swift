@@ -19,17 +19,17 @@ class moodViewController: UIViewController {
         if(currentValue >= 0.75){
             let image = UIImage(named:"emoji 4.png")
             emoji.image = image
-            moodLabel.text = "Very Good"
+            moodLabel.text = "Refreshed and happy"
         }
         else if(currentValue >= 0.5){
             let image = UIImage(named:"emoji 3.png")
             emoji.image = image
-            moodLabel.text = "Good"
+            moodLabel.text = "I’m fine"
         }
         else if(currentValue >= 0.25){
             let image = UIImage(named:"emoji 2.png")
             emoji.image = image
-            moodLabel.text = "Bad"
+            moodLabel.text = "Not okay"
         }
         else{
             let image = UIImage(named:"emoji 1.png")
