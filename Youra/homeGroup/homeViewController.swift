@@ -75,7 +75,7 @@ class homeViewController: UIViewController {
         workDuration = UserDefaultManager.shared.defaults.value(forKey: "workSession") as? TimeInterval
         restDuration = UserDefaultManager.shared.defaults.value(forKey: "restSession") as? TimeInterval
 
-        workLabel.text = stringFromTimeInterval(interval: workDuration!)
-        restLabel.text = stringFromTimeInterval(interval: restDuration!)
+        workLabel.text = stringFromTimeInterval(interval: workDuration ?? 0)
+        restLabel.text = stringFromTimeInterval(interval: restDuration ?? 0)
     }
 }
