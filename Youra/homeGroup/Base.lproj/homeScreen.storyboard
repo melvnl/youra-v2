@@ -206,13 +206,14 @@ We suggest you to look for professional help if you have high level of stress.</
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FmI-70-3dh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1906.1538461538462" y="-370.37914691943126"/>
+            <point key="canvasLocation" x="-1902" y="-362"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tEJ-Ab-sUb">
             <objects>
                 <tabBarController id="w6D-s7-WCe" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="DjN-F5-Geu"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q1y-4A-f6P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -500,10 +501,10 @@ We suggest you to look for professional help if you have high level of stress.</
         <!--Navigation Controller-->
         <scene sceneID="w6t-sp-sRe">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UUd-eZ-f3i" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="UUd-eZ-f3i" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pd7-JN-vuW">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
