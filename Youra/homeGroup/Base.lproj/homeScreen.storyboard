@@ -413,6 +413,14 @@ We suggest you to look for professional help if you have high level of stress.</
             </objects>
             <point key="canvasLocation" x="956.92307692307691" y="54.739336492890992"/>
         </scene>
+        <!--sessionScreen-->
+        <scene sceneID="57N-K0-CJe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="sessionScreen" id="xyw-dX-cOO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f2A-Ll-eVe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="816" y="75"/>
+        </scene>
         <!--Setting-->
         <scene sceneID="bOx-ne-BbY">
             <objects>
