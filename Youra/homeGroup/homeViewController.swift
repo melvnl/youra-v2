@@ -12,12 +12,18 @@ class homeViewController: UIViewController {
     @IBOutlet weak var workLabel: UILabel!
     @IBOutlet weak var restLabel: UILabel!
     
-    var workDuration: TimeInterval? = 0
+	@IBOutlet weak var usernameLabel: UILabel!
+
+	
+	var workDuration: TimeInterval? = 0
     var restDuration: TimeInterval? = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Home Screen Loaded")
+
+		//Set Display Name
+		usernameLabel.text = UserDefaultManager.shared.defaults.value(forKey: "username") as? String
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.funcName), name: NSNotification.Name(rawValue: "pickerClosed"), object: nil)
         

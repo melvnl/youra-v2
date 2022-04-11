@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		682EBA8C2801D17900D10A5E /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682EBA8B2801D17900D10A5E /* PrivacyPolicyViewController.swift */; };
+		682EBA8E2801D1CE00D10A5E /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682EBA8D2801D1CE00D10A5E /* DisclaimerViewController.swift */; };
+		683CD9F22801D66600ABCD8F /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683CD9F12801D66600ABCD8F /* UserDefaultManager.swift */; };
 		B088AB262801A597007CFCF6 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B088AB252801A597007CFCF6 /* settingViewController.swift */; };
+		B0D2C22A2801DE1300C2DDD7 /* historyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D2C2292801DE1300C2DDD7 /* historyViewController.swift */; };
 		B5E6FEA827FDA97100350A57 /* pickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6FEA727FDA97100350A57 /* pickerViewController.swift */; };
 		DB38E5662802702300946B69 /* sessionScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB38E5652802702300946B69 /* sessionScreen.storyboard */; };
 		DB38E5682802781A00946B69 /* RestSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB38E5672802781A00946B69 /* RestSessionViewController.swift */; };
@@ -23,7 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		682EBA8B2801D17900D10A5E /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		682EBA8D2801D1CE00D10A5E /* DisclaimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = "<group>"; };
+		683CD9F12801D66600ABCD8F /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		B088AB252801A597007CFCF6 /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
+		B0D2C2292801DE1300C2DDD7 /* historyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyViewController.swift; sourceTree = "<group>"; };
 		B5E6FEA727FDA97100350A57 /* pickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pickerViewController.swift; sourceTree = "<group>"; };
 		DB38E5652802702300946B69 /* sessionScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = sessionScreen.storyboard; sourceTree = "<group>"; };
 		DB38E5672802781A00946B69 /* RestSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSessionViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68B985792801D5F20091F3B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				683CD9F12801D66600ABCD8F /* UserDefaultManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B088AB242801A572007CFCF6 /* settingGroup */ = {
 			isa = PBXGroup;
 			children = (
@@ -59,9 +75,19 @@
 			path = settingGroup;
 			sourceTree = "<group>";
 		};
+		B0D2C2282801DE0300C2DDD7 /* historyGroup */ = {
+			isa = PBXGroup;
+			children = (
+				B0D2C2292801DE1300C2DDD7 /* historyViewController.swift */,
+			);
+			path = historyGroup;
+			sourceTree = "<group>";
+		};
 		B514F7DF27FFDBD300C8020B /* homeGroup */ = {
 			isa = PBXGroup;
 			children = (
+				682EBA8B2801D17900D10A5E /* PrivacyPolicyViewController.swift */,
+				682EBA8D2801D1CE00D10A5E /* DisclaimerViewController.swift */,
 				DB9DC3CD27FABAA9002F048D /* homeViewController.swift */,
 				B5E6FEA727FDA97100350A57 /* pickerViewController.swift */,
 				DB9DC3CF27FABAA9002F048D /* homeScreen.storyboard */,
@@ -100,6 +126,9 @@
 		DB9DC3C827FABAA9002F048D /* Youra */ = {
 			isa = PBXGroup;
 			children = (
+				68B985792801D5F20091F3B3 /* Model */,
+				B0D2C2282801DE0300C2DDD7 /* historyGroup */,
+				B088AB242801A572007CFCF6 /* settingGroup */,
 				DB9DC3C927FABAA9002F048D /* AppDelegate.swift */,
 				DB9DC3CB27FABAA9002F048D /* SceneDelegate.swift */,
 				DB933BAD2801CB0B0019411A /* sessionsGroup */,
@@ -188,11 +217,16 @@
 				DBA1D67B2802EA46000B54B4 /* BackgroundModel.swift in Sources */,
 				DB9DC3CA27FABAA9002F048D /* AppDelegate.swift in Sources */,
 				DBA1D67F2802EA79000B54B4 /* BackgroundSeeder.swift in Sources */,
+				683CD9F22801D66600ABCD8F /* UserDefaultManager.swift in Sources */,
+				682EBA8E2801D1CE00D10A5E /* DisclaimerViewController.swift in Sources */,
+        
 				B088AB262801A597007CFCF6 /* settingViewController.swift in Sources */,
+				682EBA8C2801D17900D10A5E /* PrivacyPolicyViewController.swift in Sources */,
 				B5E6FEA827FDA97100350A57 /* pickerViewController.swift in Sources */,
 				DB933BAF2801CB7E0019411A /* WorkSessionViewController.swift in Sources */,
 				DB38E5682802781A00946B69 /* RestSessionViewController.swift in Sources */,
 				DB9DC3CC27FABAA9002F048D /* SceneDelegate.swift in Sources */,
+				B0D2C22A2801DE1300C2DDD7 /* historyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
