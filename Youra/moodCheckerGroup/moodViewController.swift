@@ -13,6 +13,7 @@ class moodViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var moodLabel: UILabel!
     
+    @IBOutlet weak var button: UIButton!
     @IBAction func getSliderValue(_ sender: UISlider) {
         let currentValue = Float(sender.value)
         
@@ -40,6 +41,13 @@ class moodViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        button.layer.cornerRadius = 10
+        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+                button.layer.shadowOffset = CGSize(width: 0, height: 3)
+                button.layer.shadowOpacity = 1.0
+                button.layer.shadowRadius = 10.0
+                button.layer.masksToBounds = false
         
 
         // Do any additional setup after loading the view.
