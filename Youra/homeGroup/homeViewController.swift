@@ -12,28 +12,40 @@ class homeViewController: UIViewController {
     @IBOutlet weak var workLabel: UILabel!
     @IBOutlet weak var restLabel: UILabel!
     
-	@IBOutlet weak var usernameLabel: UILabel!
-
-	
-	var workDuration: TimeInterval? = 0
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var goodLabel: UILabel!
+    
+    var workDuration: TimeInterval? = 0
     var restDuration: TimeInterval? = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Home Screen Loaded")
+        
+        let date = Date()
+        let hour = (Calendar.current.component(.hour, from: date))
+        
+        switch hour {
+          case 5...11:
+            goodLabel.text = "Good Morning"
 
-		//Set Display Name
-		usernameLabel.text = UserDefaultManager.shared.defaults.value(forKey: "username") as? String
+          case 12...17:
+            goodLabel.text = "Good Afternoon"
+
+          default:
+            goodLabel.text = "Good Evening"
+        }
+        
+        usernameLabel.text = UserDefaultManager.shared.defaults.value(forKey: "username") as? String
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.funcName), name: NSNotification.Name(rawValue: "pickerClosed"), object: nil)
         
-        workLabel.text = stringFromTimeInterval(interval: workDuration!)
-        restLabel.text = stringFromTimeInterval(interval: workDuration!)
+        updateLabel()
     }
     
     @objc func funcName() {
-        workLabel.text = stringFromTimeInterval(interval: workDuration!)
-        restLabel.text = stringFromTimeInterval(interval: restDuration!)
+      updateLabel()
     }
     
 
@@ -58,5 +70,12 @@ class homeViewController: UIViewController {
         
         return String(timeStringed)
     }
-}
+    
+    func updateLabel(){
+        workDuration = UserDefaultManager.shared.defaults.value(forKey: "workSession") as? TimeInterval
+        restDuration = UserDefaultManager.shared.defaults.value(forKey: "restSession") as? TimeInterval
 
+        workLabel.text = stringFromTimeInterval(interval: workDuration ?? 0)
+        restLabel.text = stringFromTimeInterval(interval: restDuration ?? 0)
+    }
+}
