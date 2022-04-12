@@ -30,6 +30,7 @@ class RestSessionViewController: UIViewController {
     var quotesRandNumber: Int = 0
     var musicRandNumber: Int = 0
     var isPaused = false
+    var restDuration: TimeInterval? = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,7 @@ class RestSessionViewController: UIViewController {
         backgrounds = BackgroundSeeder().generateData()
         quotes = BackgroundSeeder().generateQuotes()
         musics = MusicSeeder().generateData()
+        restDuration = UserDefaultManager.shared.defaults.value(forKey: "restSession") as? TimeInterval
         
         // Set View
         randomizeNumber()
@@ -153,7 +155,7 @@ class RestSessionViewController: UIViewController {
         
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         basicAnimation.toValue = 1
-        basicAnimation.duration = 60
+        basicAnimation.duration = restDuration ?? 0
         basicAnimation.fillMode = CAMediaTimingFillMode.forwards
         basicAnimation.isRemovedOnCompletion = false
         foregroundLayer.add(basicAnimation, forKey: "basicAnimation")
