@@ -257,4 +257,13 @@ class RestSessionViewController: UIViewController {
         
         present(alert, animated: true)
     }
+
+	
+	@IBAction func startButtonClick(_ sender: Any) {
+		let sessionData = AppHelper.getSessionData()
+
+
+		AppHelper.initSessionData(sessionData: sessionData)
+		print(sessionData)
+	}
 }

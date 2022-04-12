@@ -11,7 +11,7 @@
         <!--Privacy Policy View Controller-->
         <scene sceneID="bWg-gp-2wK">
             <objects>
-                <viewController storyboardIdentifier="privacyPolicyVC" wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CpC-S8-J8a" customClass="PrivacyPolicyViewController" customModule="Youra" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="privacyPolicyVC" wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CpC-S8-J8a" customClass="PrivacyPolicyViewController" customModule="Youra" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qyP-ME-X3q">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +120,7 @@
         <!--Disclaimer View Controller-->
         <scene sceneID="D7h-vo-QYH">
             <objects>
-                <viewController storyboardIdentifier="disclaimerVC" wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RaL-IW-20x" customClass="DisclaimerViewController" customModule="Youra" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="disclaimerVC" wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RaL-IW-20x" customClass="DisclaimerViewController" customModule="Youra" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WQw-pc-lwd">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -282,7 +282,7 @@ We suggest you to look for professional help if you have high level of stress.</
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="homeVC" title="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="homeViewController" customModule="Youra" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeVC" title="Home" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="homeViewController" customModule="Youra" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -401,6 +401,7 @@ We suggest you to look for professional help if you have high level of stress.</
                                     <color key="baseForegroundColor" red="0.25490196079999999" green="0.2274509804" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="startButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N00-z8-7GV"/>
                                     <segue destination="xyw-dX-cOO" kind="show" id="1Cb-NI-ZwY"/>
                                 </connections>
                             </button>

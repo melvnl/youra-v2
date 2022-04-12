@@ -12,6 +12,10 @@ class moodViewController: UIViewController {
     @IBOutlet weak var emoji: UIImageView!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var moodLabel: UILabel!
+
+	let context = (UIApplication.self.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+	var sliderValue:Float = 0.0
     
     @IBOutlet weak var button: UIButton!
     @IBAction func getSliderValue(_ sender: UISlider) {
@@ -37,6 +41,7 @@ class moodViewController: UIViewController {
             emoji.image = image
             moodLabel.text = "Very Bad"
         }
+		sliderValue = currentValue
     }
     
     override func viewDidLoad() {
@@ -68,4 +73,5 @@ class moodViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
+	
 }
