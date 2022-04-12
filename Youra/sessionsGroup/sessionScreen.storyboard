@@ -59,7 +59,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="endSessionTapped:" destination="NzA-Wo-J9V" eventType="touchUpInside" id="qxM-HA-Ak3"/>
-                                    <segue destination="zEm-8Q-CsA" kind="show" id="Qwi-Ql-rLq"/>
+                                    <segue destination="HBf-yk-teb" kind="show" id="RYN-xH-HUU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -92,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCD-5M-ayF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="793.84615384615381" y="54.739336492890992"/>
+            <point key="canvasLocation" x="-538" y="55"/>
         </scene>
         <!--Rest Session View Controller-->
         <scene sceneID="f9U-om-L21">
@@ -291,9 +291,90 @@
             </objects>
             <point key="canvasLocation" x="2541.5384615384614" y="54.739336492890992"/>
         </scene>
+        <!--Mood View Controller-->
+        <scene sceneID="bGO-nY-xgo">
+            <objects>
+                <viewController id="HBf-yk-teb" customClass="moodViewController" customModule="Youra" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="swP-il-9dT">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homeScreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="FDE-fL-icd">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.32156862749999998" green="0.29411764709999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headerHomeScreen" translatesAutoresizingMaskIntoConstraints="NO" id="puP-xj-X1I">
+                                <rect key="frame" x="-11" y="0.0" width="413" height="220"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Good Afternoon, " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jh-qA-dAz">
+                                <rect key="frame" x="16" y="62" width="267" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" red="0.25490196079999999" green="0.2274509804" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let’s see how you feel right now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKb-Pz-189">
+                                <rect key="frame" x="16" y="111" width="243" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.25490196079999999" green="0.2274509804" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="z6q-w1-zwf">
+                                <rect key="frame" x="14" y="542" width="362" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.32156862749999998" green="0.29411764709999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="getSliderValue:" destination="HBf-yk-teb" eventType="valueChanged" id="Tq3-6E-0tf"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Si1-eJ-z8v">
+                                <rect key="frame" x="16" y="688" width="358" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.32156862749999998" green="0.29411764709999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.32156862749999998" green="0.29411764709999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start">
+                                    <color key="baseBackgroundColor" red="0.32156862749999998" green="0.29411764709999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="zEm-8Q-CsA" kind="show" id="Bxd-8e-zEY"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emoji 3" translatesAutoresizingMaskIntoConstraints="NO" id="Hv1-ZY-fqy">
+                                <rect key="frame" x="75" y="358" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I'm fine" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z20-aP-GeC">
+                                <rect key="frame" x="29" y="324" width="332" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NzY-ck-yyC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LFK-89-dkd"/>
+                    <connections>
+                        <outlet property="button" destination="Si1-eJ-z8v" id="Pd0-B4-cQa"/>
+                        <outlet property="emoji" destination="Hv1-ZY-fqy" id="rJP-aR-mWF"/>
+                        <outlet property="moodLabel" destination="Z20-aP-GeC" id="OzH-GY-VLd"/>
+                        <outlet property="slider" destination="z6q-w1-zwf" id="gLy-iL-hkH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IV0-jJ-9YC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="438" y="55"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="emoji 3" width="80" height="80"/>
         <image name="header-bg-light" width="390" height="270"/>
+        <image name="headerHomeScreen" width="390" height="265"/>
         <image name="homeScreenBackground" width="390" height="844"/>
         <image name="pause.fill" catalog="system" width="116" height="128"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
