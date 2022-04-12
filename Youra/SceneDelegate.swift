@@ -19,19 +19,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let _ = (scene as? UIWindowScene) else { return }
 
-		UserDefaults.standard.removePersistentDomain(forName: "com.youra.saved.data")
-		UserDefaults.standard.synchronize()
+//		UserDefaults.standard.removePersistentDomain(forName: "com.youra.saved.data")
+//		UserDefaults.standard.synchronize()
 
-//		let username = UserDefaultManager.shared.defaults.value(forKey: "username") as? String
-//        
-//        // Cek apakah setup page perlu ditampilkan
-//        let identifier  = (username == nil) ? "privacyPolicyVC" : "homeVC"
-//
-//        
-//        let mainStoryBoard = UIStoryboard(name: "homeScreen", bundle: nil)
-//        let viewController = mainStoryBoard.instantiateViewController(withIdentifier: identifier)
-//        
-//        window?.rootViewController = viewController
+		let username = UserDefaultManager.shared.defaults.value(forKey: "username") as? String
+
+        // Cek apakah setup page perlu ditampilkan
+        let identifier  = (username == nil) ? "firstNavController" : "secondNavController"
+        let storyboard =  (username == nil) ? "firstSetup" : "secondSetup"
+
+        let mainStoryBoard = UIStoryboard(name: storyboard, bundle: nil)
+        let viewController = mainStoryBoard.instantiateViewController(withIdentifier: identifier)
+
+        window?.rootViewController = viewController
         
     }
     
