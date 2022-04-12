@@ -32,6 +32,8 @@ class RestSessionViewController: UIViewController {
     var isPaused = false
     var restDuration: TimeInterval? = 0
     
+    var sessionDuration = Int((UserDefaultManager.shared.defaults.value(forKey: "restSession") as? TimeInterval)! )
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +46,19 @@ class RestSessionViewController: UIViewController {
         // Set View
         randomizeNumber()
         
-        restTimerLabel.text = "REST"
+        let hours = sessionDuration / 3600
+        let mins = sessionDuration % 3600 / 60
+        let secs = sessionDuration % 60
+        
+        restTimerLabel.text = "\(restDuration ?? 0)"
+        if(hours > 0){
+            print("dari set view")
+            print(hours)
+            restTimerLabel.text = String(hours) + ":" + (mins >= 10 ? String(mins): ("0" + String(mins)) ) + ":" + (secs == 0 ? "00":String(secs))
+        }
+        else{
+            restTimerLabel.text = String(mins) + ":" + (secs < 10 ? "0" : "") + String(secs)
+        }
         restTimerLabel.textColor = backgrounds[randNumber].timerLabelColor
         
         imageBackground.image = backgrounds[randNumber].bgTitle
@@ -97,8 +111,12 @@ class RestSessionViewController: UIViewController {
         view.layer.addSublayer(foregroundLayer)
         
         playAnimation()
+        var timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerCount), userInfo: nil, repeats: true)
+        
         playSong()
         song.play()
+        
+        
     }
     
     @IBAction func noteButtonPressed(_ sender: Any) {
@@ -160,6 +178,25 @@ class RestSessionViewController: UIViewController {
         basicAnimation.isRemovedOnCompletion = false
         foregroundLayer.add(basicAnimation, forKey: "basicAnimation")
     }
+    
+    @objc func timerCount() {
+        
+        let hours = sessionDuration / 3600
+        let mins = sessionDuration % 3600 / 60
+        let secs = sessionDuration % 60
+         
+        if sessionDuration > 0 {
+            sessionDuration -= 1
+            
+            if(hours > 0){
+                restTimerLabel.text = String(hours) + ":" + (mins >= 10 ? String(mins): ("0" + String(mins)) ) + ":" + (secs == 0 ? "00":String(secs))
+            }
+            else{
+                restTimerLabel.text = String(mins) + ":" + (secs < 10 ? "0" : "") + String(secs)
+            }
+            
+            }
+     }
     
     @IBAction func endSessionTapped(_ sender: Any) {
         showAlert()
