@@ -1,28 +1,18 @@
 //
-//  historyViewController.swift
+//  navigationViewController.swift
 //  Youra
 //
-//  Created by melvin on 09/04/22.
+//  Created by melvin on 12/04/22.
 //
 
 import UIKit
 
-class historyViewController: UIViewController {
+class navigationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("history called")
 
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
     }
     
 
