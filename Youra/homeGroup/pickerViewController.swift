@@ -41,6 +41,14 @@ class CustomModalViewController: UIViewController {
     lazy var timePicker: UIDatePicker = {
         let picker = UIDatePicker()
         picker.datePickerMode = .countDownTimer
+        picker.addTarget(self, action: #selector(respondToChanges(picker:)), for: .valueChanged)
+        picker.minuteInterval = 5
+        
+//        var components = DateComponents()
+//        components.minute = 30
+//        let date = Calendar.current.date(from: components)!
+//        picker.setDate(date, animated: true)
+        
         return picker
     }()
     
@@ -111,6 +119,26 @@ class CustomModalViewController: UIViewController {
         cancelDismissView()
     }
     
+    @objc func respondToChanges(picker: UIDatePicker) {
+        
+        var maxDuration:Int = 0
+        
+        if self.parentButton == "work" {
+            maxDuration  = 3600
+        }
+        else if self.parentButton == "rest" {
+            maxDuration = 1800
+        }
+    
+        if (Int(picker.countDownDuration) > maxDuration) { //countDownDuration has to be in seconds
+            var components = DateComponents()
+            components.hour = maxDuration/3600
+            components.minute = (maxDuration %  3600)/60
+            let date = Calendar.current.date(from: components)!
+            picker.setDate(date, animated: true)
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animateShowDimmedView()
@@ -123,8 +151,6 @@ class CustomModalViewController: UIViewController {
     }
     
     func setupConstraints() {
-        // Add subviews
-//        containerView.backgroundColor = UIColor(red: 151/255.0, green: 151/255.0, blue: 151/255.0, alpha: 1.0)
         view.addSubview(dimmedView)
         view.addSubview(containerView)
         dimmedView.translatesAutoresizingMaskIntoConstraints = false
