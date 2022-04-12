@@ -272,7 +272,7 @@ We suggest you to look for professional help if you have high level of stress.</
                         <viewLayoutGuide key="safeArea" id="uzq-eH-vNF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="CvJ-vS-3Ma"/>
+                    <tabBarItem key="tabBarItem" title="History" image="note.text" catalog="system" id="CvJ-vS-3Ma"/>
                     <navigationItem key="navigationItem" id="beO-NC-hTt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dh9-iQ-qyZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -401,7 +401,7 @@ We suggest you to look for professional help if you have high level of stress.</
                                     <color key="baseForegroundColor" red="0.25490196079999999" green="0.2274509804" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="sy0-Qp-0om" kind="show" id="t3D-7i-Wvd"/>
+                                    <segue destination="xyw-dX-cOO" kind="show" id="1Cb-NI-ZwY"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rahmat" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iby-tV-Vq8">
@@ -419,7 +419,7 @@ We suggest you to look for professional help if you have high level of stress.</
                             <constraint firstItem="Iby-tV-Vq8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="46" id="pVi-TK-EJS"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="H2T-T0-uuf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="H2T-T0-uuf"/>
                     <connections>
                         <outlet property="goodLabel" destination="sv2-M7-8k6" id="NvM-Ir-qcR"/>
                         <outlet property="restLabel" destination="ah3-3H-5hi" id="W3P-eW-vsY"/>
@@ -505,15 +505,17 @@ We suggest you to look for professional help if you have high level of stress.</
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kln-Yz-bt6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1828" y="55"/>
+            <point key="canvasLocation" x="2735" y="55"/>
         </scene>
         <!--sessionScreen-->
         <scene sceneID="57N-K0-CJe">
             <objects>
-                <viewControllerPlaceholder storyboardName="sessionScreen" id="xyw-dX-cOO" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="sessionScreen" id="xyw-dX-cOO" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="MWH-gA-Dn4"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2A-Ll-eVe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="75"/>
+            <point key="canvasLocation" x="1667" y="55"/>
         </scene>
         <!--Setting-->
         <scene sceneID="bOx-ne-BbY">
@@ -593,7 +595,7 @@ We suggest you to look for professional help if you have high level of stress.</
                         <viewLayoutGuide key="safeArea" id="CN6-MD-f6M"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Setting" image="gear" catalog="system" id="7BP-cK-Rk0"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="gearshape.fill" catalog="system" id="7BP-cK-Rk0"/>
                     <navigationItem key="navigationItem" id="KbM-7w-cJd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9A-Np-E4d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -626,11 +628,12 @@ We suggest you to look for professional help if you have high level of stress.</
         <image name="buttonSessionHome" width="76" height="151"/>
         <image name="buttonStartSession" width="180" height="180"/>
         <image name="emoji 3" width="80" height="80"/>
-        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="header-bg-light" width="390" height="270"/>
         <image name="headerHomeScreen" width="390" height="265"/>
         <image name="homeScreenBackground" width="390" height="844"/>
-        <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="note.text" catalog="system" width="128" height="106"/>
         <image name="sessionButtonBackground" width="384" height="151"/>
         <image name="slider.vertical.3" catalog="system" width="128" height="111"/>
         <systemColor name="systemBackgroundColor">

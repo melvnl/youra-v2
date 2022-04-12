@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class WorkSessionViewController: UIViewController {
     
@@ -97,7 +98,7 @@ class WorkSessionViewController: UIViewController {
     }
     
     @IBAction func endSessionTapped(_ sender: Any) {
-        showAlert()
+//        showAlert()
     }
     
     func showAlert() {
