@@ -119,6 +119,16 @@ class RestSessionViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     @IBAction func noteButtonPressed(_ sender: Any) {
         
         
@@ -210,6 +220,8 @@ class RestSessionViewController: UIViewController {
             preferredStyle: .alert
         )
         
+        alert.view.tintColor = UIColor(red: 50/255, green: 32/255, blue: 117/255, alpha: 1)
+        
         alert.addAction(UIAlertAction(
             title: "Yes",
             style: .default,
@@ -228,21 +240,31 @@ class RestSessionViewController: UIViewController {
                 self.noteBGButton.backgroundColor = self.backgrounds[self.randNumber].noteButtonBGColor
                 self.playAnimation()
                 self.playSong()
+                self.performSegue(withIdentifier: "restMoodSegue", sender: nil)
 //                self.song.play()
                 
-                let storyBoard : UIStoryboard = UIStoryboard(name: "homeScreen", bundle:nil)
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "moodView") as! moodViewController
-                self.present(nextViewController, animated:true, completion:nil)
+//                let storyBoard : UIStoryboard = UIStoryboard(name: "homeScreen", bundle:nil)
+//                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "moodView") as! beforeMoodViewController
+//                self.present(nextViewController, animated:true, completion:nil)
             })
         )
         
         alert.addAction(UIAlertAction(
             title: "Cancel",
-            style: .cancel,
+            style: .destructive,
             handler: { action in
             })
         )
         
         present(alert, animated: true)
     }
+
+	
+	@IBAction func startButtonClick(_ sender: Any) {
+		let sessionData = AppHelper.getSessionData()
+
+
+		AppHelper.initSessionData(sessionData: sessionData)
+		print(sessionData)
+	}
 }

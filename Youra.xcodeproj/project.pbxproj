@@ -10,10 +10,17 @@
 		682EBA8C2801D17900D10A5E /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682EBA8B2801D17900D10A5E /* PrivacyPolicyViewController.swift */; };
 		682EBA8E2801D1CE00D10A5E /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682EBA8D2801D1CE00D10A5E /* DisclaimerViewController.swift */; };
 		683CD9F22801D66600ABCD8F /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683CD9F12801D66600ABCD8F /* UserDefaultManager.swift */; };
+		6843620C2805B6E600EED0CA /* YouraData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6843620A2805B6E600EED0CA /* YouraData.xcdatamodeld */; };
+		684362152805B96200EED0CA /* SessionData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684362132805B96200EED0CA /* SessionData+CoreDataClass.swift */; };
+		684362162805B96200EED0CA /* SessionData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684362142805B96200EED0CA /* SessionData+CoreDataProperties.swift */; };
+		684362192805BB0E00EED0CA /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684362182805BB0E00EED0CA /* AppHelper.swift */; };
 		B088AB262801A597007CFCF6 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B088AB252801A597007CFCF6 /* settingViewController.swift */; };
 		B0D2C22A2801DE1300C2DDD7 /* historyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D2C2292801DE1300C2DDD7 /* historyViewController.swift */; };
-		B0EACB0B2803D82500049098 /* moodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EACB0A2803D82500049098 /* moodViewController.swift */; };
+		B0EACB0B2803D82500049098 /* beforeMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EACB0A2803D82500049098 /* beforeMoodViewController.swift */; };
+		B5A570572805C7E400766AC6 /* afterMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A570562805C7E400766AC6 /* afterMoodViewController.swift */; };
+		B5A570592805CB1500766AC6 /* firstSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5A570582805CB1500766AC6 /* firstSetup.storyboard */; };
 		B5E6FEA827FDA97100350A57 /* pickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6FEA727FDA97100350A57 /* pickerViewController.swift */; };
+		B5F6D0422805D07D001D007B /* secondSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F6D0412805D07D001D007B /* secondSetup.storyboard */; };
 		DB38E5662802702300946B69 /* sessionScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB38E5652802702300946B69 /* sessionScreen.storyboard */; };
 		DB38E5682802781A00946B69 /* RestSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB38E5672802781A00946B69 /* RestSessionViewController.swift */; };
 		DB6AEA872804601B005DE245 /* 03.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DB6AEA812804601A005DE245 /* 03.mp3 */; };
@@ -39,10 +46,17 @@
 		682EBA8B2801D17900D10A5E /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		682EBA8D2801D1CE00D10A5E /* DisclaimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = "<group>"; };
 		683CD9F12801D66600ABCD8F /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		6843620B2805B6E600EED0CA /* YouraData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YouraData.xcdatamodel; sourceTree = "<group>"; };
+		684362132805B96200EED0CA /* SessionData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		684362142805B96200EED0CA /* SessionData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		684362182805BB0E00EED0CA /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		B088AB252801A597007CFCF6 /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 		B0D2C2292801DE1300C2DDD7 /* historyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyViewController.swift; sourceTree = "<group>"; };
-		B0EACB0A2803D82500049098 /* moodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moodViewController.swift; sourceTree = "<group>"; };
+		B0EACB0A2803D82500049098 /* beforeMoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = beforeMoodViewController.swift; sourceTree = "<group>"; };
+		B5A570562805C7E400766AC6 /* afterMoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = afterMoodViewController.swift; sourceTree = "<group>"; };
+		B5A570582805CB1500766AC6 /* firstSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = firstSetup.storyboard; sourceTree = "<group>"; };
 		B5E6FEA727FDA97100350A57 /* pickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pickerViewController.swift; sourceTree = "<group>"; };
+		B5F6D0412805D07D001D007B /* secondSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = secondSetup.storyboard; sourceTree = "<group>"; };
 		DB38E5652802702300946B69 /* sessionScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = sessionScreen.storyboard; sourceTree = "<group>"; };
 		DB38E5672802781A00946B69 /* RestSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSessionViewController.swift; sourceTree = "<group>"; };
 		DB6AEA812804601A005DE245 /* 03.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 03.mp3; sourceTree = "<group>"; };
@@ -77,9 +91,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		684362172805BAFA00EED0CA /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				684362182805BB0E00EED0CA /* AppHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		68B985792801D5F20091F3B3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				684362132805B96200EED0CA /* SessionData+CoreDataClass.swift */,
+				684362142805B96200EED0CA /* SessionData+CoreDataProperties.swift */,
 				683CD9F12801D66600ABCD8F /* UserDefaultManager.swift */,
 			);
 			path = Model;
@@ -104,7 +128,8 @@
 		B0EACB092803D80C00049098 /* moodCheckerGroup */ = {
 			isa = PBXGroup;
 			children = (
-				B0EACB0A2803D82500049098 /* moodViewController.swift */,
+				B0EACB0A2803D82500049098 /* beforeMoodViewController.swift */,
+				B5A570562805C7E400766AC6 /* afterMoodViewController.swift */,
 			);
 			path = moodCheckerGroup;
 			sourceTree = "<group>";
@@ -117,6 +142,8 @@
 				DB9DC3CD27FABAA9002F048D /* homeViewController.swift */,
 				B5E6FEA727FDA97100350A57 /* pickerViewController.swift */,
 				DB9DC3CF27FABAA9002F048D /* homeScreen.storyboard */,
+				B5F6D0412805D07D001D007B /* secondSetup.storyboard */,
+				B5A570582805CB1500766AC6 /* firstSetup.storyboard */,
 			);
 			path = homeGroup;
 			sourceTree = "<group>";
@@ -167,18 +194,20 @@
 		DB9DC3C827FABAA9002F048D /* Youra */ = {
 			isa = PBXGroup;
 			children = (
+				684362172805BAFA00EED0CA /* Helper */,
+				DB9DC3C927FABAA9002F048D /* AppDelegate.swift */,
+				DB9DC3CB27FABAA9002F048D /* SceneDelegate.swift */,
 				DB6AEA8028046001005DE245 /* Music */,
 				B0EACB092803D80C00049098 /* moodCheckerGroup */,
 				68B985792801D5F20091F3B3 /* Model */,
 				B0D2C2282801DE0300C2DDD7 /* historyGroup */,
-				DB9DC3C927FABAA9002F048D /* AppDelegate.swift */,
-				DB9DC3CB27FABAA9002F048D /* SceneDelegate.swift */,
 				DB933BAD2801CB0B0019411A /* sessionsGroup */,
 				B088AB242801A572007CFCF6 /* settingGroup */,
 				B514F7DF27FFDBD300C8020B /* homeGroup */,
 				DB9DC3D227FABAAA002F048D /* Assets.xcassets */,
 				DB9DC3D427FABAAA002F048D /* LaunchScreen.storyboard */,
 				DB9DC3D727FABAAA002F048D /* Info.plist */,
+				6843620A2805B6E600EED0CA /* YouraData.xcdatamodeld */,
 			);
 			path = Youra;
 			sourceTree = "<group>";
@@ -247,7 +276,9 @@
 				DB6AEA872804601B005DE245 /* 03.mp3 in Resources */,
 				DB9DC3D627FABAAA002F048D /* LaunchScreen.storyboard in Resources */,
 				DB9DC3D327FABAAA002F048D /* Assets.xcassets in Resources */,
+				B5F6D0422805D07D001D007B /* secondSetup.storyboard in Resources */,
 				DB6AEA8B2804601B005DE245 /* 05.mp3 in Resources */,
+				B5A570592805CB1500766AC6 /* firstSetup.storyboard in Resources */,
 				DB6AEA882804601B005DE245 /* 01.mp3 in Resources */,
 				DB9DC3D127FABAA9002F048D /* homeScreen.storyboard in Resources */,
 				DB38E5662802702300946B69 /* sessionScreen.storyboard in Resources */,
@@ -263,17 +294,22 @@
 			files = (
 				DB9DC3CE27FABAA9002F048D /* homeViewController.swift in Sources */,
 				DBA1D67B2802EA46000B54B4 /* BackgroundModel.swift in Sources */,
+				684362162805B96200EED0CA /* SessionData+CoreDataProperties.swift in Sources */,
 				DB9DC3CA27FABAA9002F048D /* AppDelegate.swift in Sources */,
 				DBA1D67F2802EA79000B54B4 /* BackgroundSeeder.swift in Sources */,
+				6843620C2805B6E600EED0CA /* YouraData.xcdatamodeld in Sources */,
 				683CD9F22801D66600ABCD8F /* UserDefaultManager.swift in Sources */,
 				DB6AEA9028046196005DE245 /* MusicSeeder.swift in Sources */,
-				B0EACB0B2803D82500049098 /* moodViewController.swift in Sources */,
+				B0EACB0B2803D82500049098 /* beforeMoodViewController.swift in Sources */,
 				682EBA8E2801D1CE00D10A5E /* DisclaimerViewController.swift in Sources */,
 				B088AB262801A597007CFCF6 /* settingViewController.swift in Sources */,
+				684362152805B96200EED0CA /* SessionData+CoreDataClass.swift in Sources */,
 				DB6AEA8E28046166005DE245 /* MusicModel.swift in Sources */,
 				682EBA8C2801D17900D10A5E /* PrivacyPolicyViewController.swift in Sources */,
 				B5E6FEA827FDA97100350A57 /* pickerViewController.swift in Sources */,
+				684362192805BB0E00EED0CA /* AppHelper.swift in Sources */,
 				DB933BAF2801CB7E0019411A /* WorkSessionViewController.swift in Sources */,
+				B5A570572805C7E400766AC6 /* afterMoodViewController.swift in Sources */,
 				DB38E5682802781A00946B69 /* RestSessionViewController.swift in Sources */,
 				DB9DC3CC27FABAA9002F048D /* SceneDelegate.swift in Sources */,
 				B0D2C22A2801DE1300C2DDD7 /* historyViewController.swift in Sources */,
@@ -428,7 +464,7 @@
 				INFOPLIST_FILE = Youra/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = homeScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = firstSetup;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -456,7 +492,7 @@
 				INFOPLIST_FILE = Youra/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = homeScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = firstSetup;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -494,6 +530,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6843620A2805B6E600EED0CA /* YouraData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6843620B2805B6E600EED0CA /* YouraData.xcdatamodel */,
+			);
+			currentVersion = 6843620B2805B6E600EED0CA /* YouraData.xcdatamodel */;
+			path = YouraData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DB9DC3BE27FABAA9002F048D /* Project object */;
 }

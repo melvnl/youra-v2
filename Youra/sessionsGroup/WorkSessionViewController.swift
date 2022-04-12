@@ -105,6 +105,16 @@ class WorkSessionViewController: UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     func randomizeNumber() {
 
         randNumber = Int(arc4random_uniform(6))
@@ -126,6 +136,8 @@ class WorkSessionViewController: UIViewController {
        let hours = sessionDuration / 3600
        let mins = sessionDuration % 3600 / 60
        let secs = sessionDuration % 60
+
+
         
        if sessionDuration > 0 {
            sessionDuration -= 1
@@ -142,7 +154,17 @@ class WorkSessionViewController: UIViewController {
     
     @IBAction func endSessionTapped(_ sender: Any) {
         showAlert()
+		let sessionData = AppHelper.getSessionData()
+		sessionData.workDuration = getWorkDuration()
+
+		AppHelper.initSessionData(sessionData: sessionData)
+//		print(sessionData)
+
     }
+
+	func getWorkDuration() -> Double {
+		return Double(UserDefaultManager.shared.defaults.value(forKey: "workSession") as! Int - sessionDuration)
+	}
     
     func showAlert() {
         
@@ -151,6 +173,8 @@ class WorkSessionViewController: UIViewController {
             message: "You will end session earlier than the duration you have set up.",
             preferredStyle: .alert
         )
+        
+        alert.view.tintColor = UIColor(red: 50/255, green: 32/255, blue: 117/255, alpha: 1)
         
         alert.addAction(UIAlertAction(
             title: "Yes",
@@ -167,15 +191,17 @@ class WorkSessionViewController: UIViewController {
                 self.quotesLabel.text = self.quotes[self.quotesRandNumber].quote
                 self.playAnimation()
                 
-                let storyBoard : UIStoryboard = UIStoryboard(name: "sessionScreen", bundle:nil)
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "restView") as! RestSessionViewController
-                self.present(nextViewController, animated:true, completion:nil)
+                self.performSegue(withIdentifier: "workMoodSegue", sender: nil)
+                
+//                let storyBoard : UIStoryboard = UIStoryboard(name: "sessionScreen", bundle:nil)
+//                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "restView") as! RestSessionViewController
+//                self.present(nextViewController, animated:true, completion:nil)
             })
         )
         
         alert.addAction(UIAlertAction(
             title: "Cancel",
-            style: .cancel,
+            style: .destructive,
             handler: { action in
             })
         )

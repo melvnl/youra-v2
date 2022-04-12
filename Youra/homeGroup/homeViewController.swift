@@ -18,6 +18,8 @@ class homeViewController: UIViewController {
     var workDuration: TimeInterval? = 0
     var restDuration: TimeInterval? = 0
 
+	let context = (UIApplication.self.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Home Screen Loaded")
@@ -42,6 +44,15 @@ class homeViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.funcName), name: NSNotification.Name(rawValue: "pickerClosed"), object: nil)
         
         updateLabel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
     @objc func funcName() {
@@ -78,4 +89,24 @@ class homeViewController: UIViewController {
         workLabel.text = stringFromTimeInterval(interval: workDuration ?? 0)
         restLabel.text = stringFromTimeInterval(interval: restDuration ?? 0)
     }
+
+
+	@IBAction func startButtonClick(_ sender: Any) {
+		let sessionData = SessionData(context: self.context)
+		sessionData.key = generateKey(len: 10)
+		sessionData.createDate = Date()
+
+		AppHelper.initSessionData(sessionData: sessionData)
+//		print(AppHelper.getSessionData())
+	}
+
+	func generateKey(len:Int) -> String {
+		let charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+		let c = Array(charSet)
+		var s:String = ""
+		for _ in (1...10) {
+			s.append(c[Int(arc4random()) % c.count])
+		}
+		return s
+	}
 }
