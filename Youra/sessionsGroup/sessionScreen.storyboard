@@ -223,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TfJ-vZ-jFG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527.6923076923076" y="54.739336492890992"/>
+            <point key="canvasLocation" x="1282" y="55"/>
         </scene>
         <!--Notes View Controller-->
         <scene sceneID="ffM-3n-WMZ">
@@ -241,13 +241,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="270"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A space to release your stress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0K-WC-Luo">
-                                <rect key="frame" x="20" y="141" width="350" height="21"/>
+                                <rect key="frame" x="20" y="153" width="350" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.26666668059999998" green="0.30196079609999998" blue="0.45490196350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLv-AK-vf1">
-                                <rect key="frame" x="20" y="88" width="350" height="41"/>
+                                <rect key="frame" x="20" y="100" width="350" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <color key="textColor" red="0.25490197539999998" green="0.22745099660000001" blue="0.36078432199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -262,6 +262,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0N1-aY-ADD">
+                                <rect key="frame" x="333" y="68" width="37" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="info.circle" catalog="system">
+                                    <color key="baseForegroundColor" red="0.44244278399999998" green="0.41973669079999998" blue="0.51384943179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zt5-pv-2gi">
+                                <rect key="frame" x="16" y="66" width="26" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system">
+                                    <color key="baseForegroundColor" red="0.44244278399999998" green="0.41973669079999998" blue="0.51384943179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dFV-SD-FSw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -280,16 +296,20 @@
                             <constraint firstItem="dFV-SD-FSw" firstAttribute="trailing" secondItem="oMQ-XH-3kK" secondAttribute="trailing" constant="10" id="dB5-Hc-oqb"/>
                             <constraint firstItem="dFV-SD-FSw" firstAttribute="trailing" secondItem="q0K-WC-Luo" secondAttribute="trailing" constant="20" id="p8E-5k-4dZ"/>
                             <constraint firstItem="iLv-AK-vf1" firstAttribute="leading" secondItem="dFV-SD-FSw" secondAttribute="leading" constant="20" id="sQN-dG-GMF"/>
-                            <constraint firstItem="iLv-AK-vf1" firstAttribute="top" secondItem="dFV-SD-FSw" secondAttribute="top" constant="44" id="x3t-Y0-LJ6"/>
+                            <constraint firstItem="iLv-AK-vf1" firstAttribute="top" secondItem="6RL-NA-9y9" secondAttribute="top" constant="100" id="x3t-Y0-LJ6"/>
                             <constraint firstItem="mpO-hd-Bjg" firstAttribute="top" secondItem="oMQ-XH-3kK" secondAttribute="bottom" constant="20" id="yXj-Jx-cJm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Atr-mS-QRG"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationItem key="navigationItem" id="Atr-mS-QRG">
+                        <barButtonItem key="backBarButtonItem" title="Return" id="9qX-Tq-e42">
+                            <imageReference key="image" image="arrow.backward" catalog="system" symbolScale="large"/>
+                            <color key="tintColor" red="0.44244278399999998" green="0.41973669079999998" blue="0.51384943179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGc-RT-Ph2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2541.5384615384614" y="54.739336492890992"/>
+            <point key="canvasLocation" x="2170.7692307692305" y="54.739336492890992"/>
         </scene>
         <!--Mood View Controller-->
         <scene sceneID="bGO-nY-xgo">
@@ -336,11 +356,11 @@
                                 <color key="backgroundColor" red="0.32156862749999998" green="0.29411764709999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.32156862749999998" green="0.29411764709999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Start">
+                                <buttonConfiguration key="configuration" style="filled" title="Start" cornerStyle="medium">
                                     <color key="baseBackgroundColor" red="0.32156862749999998" green="0.29411764709999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="zEm-8Q-CsA" kind="show" id="Bxd-8e-zEY"/>
+                                    <segue destination="zEm-8Q-CsA" kind="show" id="3et-s3-8Ym"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emoji 3" translatesAutoresizingMaskIntoConstraints="NO" id="Hv1-ZY-fqy">
@@ -372,10 +392,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="emoji 3" width="80" height="80"/>
         <image name="header-bg-light" width="390" height="270"/>
         <image name="headerHomeScreen" width="390" height="265"/>
         <image name="homeScreenBackground" width="390" height="844"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="pause.fill" catalog="system" width="116" height="128"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">

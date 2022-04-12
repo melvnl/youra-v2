@@ -107,6 +107,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="WJh-0y-99I"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="btnNext" destination="AIr-O3-kJH" id="CWc-w5-8Yu"/>
                         <outlet property="usernameErrorLabel" destination="lfO-8n-dKy" id="e4Z-os-57Z"/>
@@ -203,10 +204,11 @@ We suggest you to look for professional help if you have high level of stress.</
                     </view>
                     <navigationItem key="navigationItem" id="SYt-S1-m21"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FmI-70-3dh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1902" y="-362"/>
+            <point key="canvasLocation" x="-1971" y="-370"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tEJ-Ab-sUb">
@@ -229,7 +231,7 @@ We suggest you to look for professional help if you have high level of stress.</
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qsn-pb-jTa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-906.15384615384608" y="-305.68720379146919"/>
+            <point key="canvasLocation" x="-1082" y="-370"/>
         </scene>
         <!--History-->
         <scene sceneID="zpc-g3-IJE">
@@ -277,7 +279,7 @@ We suggest you to look for professional help if you have high level of stress.</
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dh9-iQ-qyZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="67.692307692307693" y="-753.55450236966817"/>
+            <point key="canvasLocation" x="-325" y="-1233"/>
         </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
@@ -429,7 +431,7 @@ We suggest you to look for professional help if you have high level of stress.</
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956.92307692307691" y="54.739336492890992"/>
+            <point key="canvasLocation" x="-326" y="397"/>
         </scene>
         <!--sessionScreen-->
         <scene sceneID="57N-K0-CJe">
@@ -439,7 +441,7 @@ We suggest you to look for professional help if you have high level of stress.</
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2A-Ll-eVe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1667" y="55"/>
+            <point key="canvasLocation" x="382" y="397"/>
         </scene>
         <!--Setting-->
         <scene sceneID="bOx-ne-BbY">
@@ -524,18 +526,20 @@ We suggest you to look for professional help if you have high level of stress.</
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9A-Np-E4d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1666.1538461538462" y="-665.40284360189571"/>
+            <point key="canvasLocation" x="-326" y="-370"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w6t-sp-sRe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="UUd-eZ-f3i" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pd7-JN-vuW">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tp0-7D-mGM">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="CpC-S8-J8a" kind="relationship" relationship="rootViewController" id="HcJ-iw-ooR"/>
                     </connections>
@@ -545,6 +549,7 @@ We suggest you to look for professional help if you have high level of stress.</
             <point key="canvasLocation" x="-3763.0769230769229" y="-370.37914691943126"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.44244278399999998" green="0.41973669079999998" blue="0.51384943179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
         <image name="Avatar" width="133" height="133"/>
         <image name="btn_next" width="363" height="64"/>
