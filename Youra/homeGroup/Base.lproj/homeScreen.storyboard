@@ -434,7 +434,7 @@ We suggest you to look for professional help if you have high level of stress.</
         <!--Mood View Controller-->
         <scene sceneID="lrK-72-QjW">
             <objects>
-                <viewController id="sy0-Qp-0om" customClass="moodViewController" customModule="Youra" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="moodView" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sy0-Qp-0om" customClass="moodViewController" customModule="Youra" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YsP-x0-dQd">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

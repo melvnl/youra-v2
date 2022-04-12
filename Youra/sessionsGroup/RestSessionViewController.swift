@@ -191,7 +191,11 @@ class RestSessionViewController: UIViewController {
                 self.noteBGButton.backgroundColor = self.backgrounds[self.randNumber].noteButtonBGColor
                 self.playAnimation()
                 self.playSong()
-                self.song.play()
+//                self.song.play()
+                
+                let storyBoard : UIStoryboard = UIStoryboard(name: "homeScreen", bundle:nil)
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "moodView") as! moodViewController
+                self.present(nextViewController, animated:true, completion:nil)
             })
         )
         
