@@ -210,6 +210,8 @@ class RestSessionViewController: UIViewController {
             preferredStyle: .alert
         )
         
+        alert.view.tintColor = UIColor(red: 50/255, green: 32/255, blue: 117/255, alpha: 1)
+        
         alert.addAction(UIAlertAction(
             title: "Yes",
             style: .default,
@@ -238,7 +240,7 @@ class RestSessionViewController: UIViewController {
         
         alert.addAction(UIAlertAction(
             title: "Cancel",
-            style: .cancel,
+            style: .destructive,
             handler: { action in
             })
         )
