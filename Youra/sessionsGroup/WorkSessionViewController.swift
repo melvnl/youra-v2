@@ -23,6 +23,7 @@ class WorkSessionViewController: UIViewController {
     let backgroundLayer = CAShapeLayer()
     var randNumber: Int = 0
     var quotesRandNumber: Int = 0
+    var workDuration: TimeInterval? = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +31,12 @@ class WorkSessionViewController: UIViewController {
         // Generate Data
         backgrounds = BackgroundSeeder().generateData()
         quotes = BackgroundSeeder().generateQuotes()
+        workDuration = UserDefaultManager.shared.defaults.value(forKey: "workSession") as? TimeInterval
         
         // Set View
         randomizeNumber()
         
-        timerLabel.text = "WORK"
+        timerLabel.text = "\(workDuration)"
         timerLabel.textColor = backgrounds[randNumber].timerLabelColor
         
         imageBackground.image = backgrounds[randNumber].bgTitle
@@ -91,7 +93,7 @@ class WorkSessionViewController: UIViewController {
         
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         basicAnimation.toValue = 1
-        basicAnimation.duration = 60
+        basicAnimation.duration = workDuration ?? 0
         basicAnimation.fillMode = CAMediaTimingFillMode.forwards
         basicAnimation.isRemovedOnCompletion = false
         foregroundLayer.add(basicAnimation, forKey: "basicAnimation")
