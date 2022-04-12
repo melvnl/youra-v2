@@ -136,6 +136,8 @@ class WorkSessionViewController: UIViewController {
        let hours = sessionDuration / 3600
        let mins = sessionDuration % 3600 / 60
        let secs = sessionDuration % 60
+
+
         
        if sessionDuration > 0 {
            sessionDuration -= 1
@@ -152,7 +154,17 @@ class WorkSessionViewController: UIViewController {
     
     @IBAction func endSessionTapped(_ sender: Any) {
         showAlert()
+		let sessionData = AppHelper.getSessionData()
+		sessionData.workDuration = getWorkDuration()
+
+		AppHelper.initSessionData(sessionData: sessionData)
+//		print(sessionData)
+
     }
+
+	func getWorkDuration() -> Double {
+		return Double(UserDefaultManager.shared.defaults.value(forKey: "workSession") as! Int - sessionDuration)
+	}
     
     func showAlert() {
         
