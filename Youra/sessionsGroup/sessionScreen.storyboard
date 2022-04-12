@@ -170,7 +170,7 @@
                                         <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
                                         <connections>
                                             <action selector="noteButtonPressed:" destination="zEm-8Q-CsA" eventType="touchUpInside" id="2Ak-T9-alv"/>
-                                            <segue destination="Bb9-2o-AjN" kind="show" id="GDd-n5-87r"/>
+                                            <segue destination="Bb9-2o-AjN" kind="show" id="Ur2-6l-PoV"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -208,8 +208,8 @@
                             <constraint firstItem="i3S-LR-pMJ" firstAttribute="centerX" secondItem="hnd-pg-2tZ" secondAttribute="centerX" id="wX5-FR-uSP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HAJ-rK-IIb"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="circularView" destination="hnd-pg-2tZ" id="xGX-Dg-Dt0"/>
                         <outlet property="endRestSessionButton" destination="i3S-LR-pMJ" id="PuZ-Qf-Tja"/>
@@ -223,12 +223,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TfJ-vZ-jFG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1282" y="55"/>
+            <point key="canvasLocation" x="1269" y="55"/>
         </scene>
         <!--Notes View Controller-->
         <scene sceneID="ffM-3n-WMZ">
             <objects>
-                <viewController storyboardIdentifier="notesVC" wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bb9-2o-AjN" customClass="NotesViewController" customModule="Youra" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="notesVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" interfaceStyle="light" id="Bb9-2o-AjN" customClass="NotesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6RL-NA-9y9">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -262,22 +262,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0N1-aY-ADD">
-                                <rect key="frame" x="333" y="68" width="37" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="info.circle" catalog="system">
-                                    <color key="baseForegroundColor" red="0.44244278399999998" green="0.41973669079999998" blue="0.51384943179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zt5-pv-2gi">
-                                <rect key="frame" x="16" y="66" width="26" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system">
-                                    <color key="baseForegroundColor" red="0.44244278399999998" green="0.41973669079999998" blue="0.51384943179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dFV-SD-FSw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -300,16 +284,13 @@
                             <constraint firstItem="mpO-hd-Bjg" firstAttribute="top" secondItem="oMQ-XH-3kK" secondAttribute="bottom" constant="20" id="yXj-Jx-cJm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Atr-mS-QRG">
-                        <barButtonItem key="backBarButtonItem" title="Return" id="9qX-Tq-e42">
-                            <imageReference key="image" image="arrow.backward" catalog="system" symbolScale="large"/>
-                            <color key="tintColor" red="0.44244278399999998" green="0.41973669079999998" blue="0.51384943179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="7YT-uA-nov"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGc-RT-Ph2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2170.7692307692305" y="54.739336492890992"/>
+            <point key="canvasLocation" x="2035" y="55"/>
         </scene>
         <!--Mood View Controller-->
         <scene sceneID="bGO-nY-xgo">
@@ -360,7 +341,7 @@
                                     <color key="baseBackgroundColor" red="0.32156862749999998" green="0.29411764709999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="zEm-8Q-CsA" kind="show" id="3et-s3-8Ym"/>
+                                    <segue destination="zEm-8Q-CsA" kind="show" id="0o8-gW-576"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emoji 3" translatesAutoresizingMaskIntoConstraints="NO" id="Hv1-ZY-fqy">
@@ -392,12 +373,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="emoji 3" width="80" height="80"/>
         <image name="header-bg-light" width="390" height="270"/>
         <image name="headerHomeScreen" width="390" height="265"/>
         <image name="homeScreenBackground" width="390" height="844"/>
-        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="pause.fill" catalog="system" width="116" height="128"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">

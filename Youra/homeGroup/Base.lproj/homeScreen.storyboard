@@ -11,7 +11,7 @@
         <!--Privacy Policy View Controller-->
         <scene sceneID="bWg-gp-2wK">
             <objects>
-                <viewController storyboardIdentifier="privacyPolicyVC" wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CpC-S8-J8a" customClass="PrivacyPolicyViewController" customModule="Youra" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="privacyPolicyVC" autoresizesArchivedViewToFullSize="NO" wantsFullScreenLayout="YES" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CpC-S8-J8a" customClass="PrivacyPolicyViewController" customModule="Youra" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qyP-ME-X3q">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,7 +107,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="WJh-0y-99I"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="btnNext" destination="AIr-O3-kJH" id="CWc-w5-8Yu"/>
                         <outlet property="usernameErrorLabel" destination="lfO-8n-dKy" id="e4Z-os-57Z"/>
@@ -531,9 +530,10 @@ We suggest you to look for professional help if you have high level of stress.</
         <!--Navigation Controller-->
         <scene sceneID="w6t-sp-sRe">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="UUd-eZ-f3i" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UUd-eZ-f3i" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pd7-JN-vuW">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
