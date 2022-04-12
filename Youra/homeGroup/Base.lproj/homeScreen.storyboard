@@ -211,7 +211,7 @@ We suggest you to look for professional help if you have high level of stress.</
         <!--Tab Bar Controller-->
         <scene sceneID="tEJ-Ab-sUb">
             <objects>
-                <tabBarController id="w6D-s7-WCe" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="w6D-s7-WCe" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="DjN-F5-Geu"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q1y-4A-f6P">
