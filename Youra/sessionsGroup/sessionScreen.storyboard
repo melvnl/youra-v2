@@ -178,8 +178,76 @@
             </objects>
             <point key="canvasLocation" x="1449" y="55"/>
         </scene>
+        <!--Notes View Controller-->
+        <scene sceneID="pyc-kt-fGn">
+            <objects>
+                <viewController storyboardIdentifier="notesVC" wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LwG-Zy-kIO" customClass="NotesViewController" customModule="Youra" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UTe-Ml-JRN">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homeScreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="8oB-0j-DGQ" userLabel="Root Background">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header-bg-light" translatesAutoresizingMaskIntoConstraints="NO" id="BaH-q7-2NU">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="270"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A space to release your stress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSR-Gp-SOv">
+                                <rect key="frame" x="20" y="141" width="350" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.26666668059999998" green="0.30196079609999998" blue="0.45490196350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FW8-5H-q7R">
+                                <rect key="frame" x="20" y="88" width="350" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" red="0.25490197539999998" green="0.22745099660000001" blue="0.36078432199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title for your notes" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lzD-dr-tzA">
+                                <rect key="frame" x="20" y="280" width="360" height="31"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="top" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3og-l0-rsD">
+                                <rect key="frame" x="20" y="331" width="350" height="459"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ssm-Ib-TWV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tSR-Gp-SOv" firstAttribute="leading" secondItem="ssm-Ib-TWV" secondAttribute="leading" constant="20" id="2jH-fj-RRD"/>
+                            <constraint firstItem="ssm-Ib-TWV" firstAttribute="bottom" secondItem="3og-l0-rsD" secondAttribute="bottom" constant="20" id="4HR-tB-gvk"/>
+                            <constraint firstItem="ssm-Ib-TWV" firstAttribute="trailing" secondItem="FW8-5H-q7R" secondAttribute="trailing" constant="20" id="BNS-cI-NVI"/>
+                            <constraint firstItem="3og-l0-rsD" firstAttribute="top" secondItem="lzD-dr-tzA" secondAttribute="bottom" constant="20" id="Ebp-x8-A46"/>
+                            <constraint firstItem="ssm-Ib-TWV" firstAttribute="trailing" secondItem="lzD-dr-tzA" secondAttribute="trailing" constant="10" id="TJ3-h7-PO6"/>
+                            <constraint firstItem="lzD-dr-tzA" firstAttribute="leading" secondItem="ssm-Ib-TWV" secondAttribute="leading" constant="20" id="Tcu-Zx-tNx"/>
+                            <constraint firstItem="tSR-Gp-SOv" firstAttribute="top" secondItem="FW8-5H-q7R" secondAttribute="bottom" constant="12" id="VgR-zr-3pU"/>
+                            <constraint firstItem="FW8-5H-q7R" firstAttribute="top" secondItem="ssm-Ib-TWV" secondAttribute="top" constant="44" id="W57-MD-o6D"/>
+                            <constraint firstItem="BaH-q7-2NU" firstAttribute="top" secondItem="UTe-Ml-JRN" secondAttribute="top" id="Xo5-zx-LyL"/>
+                            <constraint firstItem="ssm-Ib-TWV" firstAttribute="trailing" secondItem="tSR-Gp-SOv" secondAttribute="trailing" constant="20" id="Yu7-D5-bDh"/>
+                            <constraint firstItem="FW8-5H-q7R" firstAttribute="leading" secondItem="ssm-Ib-TWV" secondAttribute="leading" constant="20" id="bK0-2x-bio"/>
+                            <constraint firstItem="BaH-q7-2NU" firstAttribute="leading" secondItem="UTe-Ml-JRN" secondAttribute="leading" id="g9E-Hj-t88"/>
+                            <constraint firstAttribute="trailing" secondItem="BaH-q7-2NU" secondAttribute="trailing" id="iNF-gR-kYS"/>
+                            <constraint firstItem="ssm-Ib-TWV" firstAttribute="trailing" secondItem="3og-l0-rsD" secondAttribute="trailing" constant="20" id="lmc-ph-OFx"/>
+                            <constraint firstItem="lzD-dr-tzA" firstAttribute="top" secondItem="BaH-q7-2NU" secondAttribute="bottom" constant="10" id="nSf-Iu-tLh"/>
+                            <constraint firstItem="3og-l0-rsD" firstAttribute="leading" secondItem="ssm-Ib-TWV" secondAttribute="leading" constant="20" id="pmO-gz-vCr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aSa-VO-7vu"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dCi-Jq-InZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2541.5384615384614" y="54.739336492890992"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="header-bg-light" width="390" height="270"/>
+        <image name="homeScreenBackground" width="390" height="844"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

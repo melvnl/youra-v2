@@ -24,14 +24,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 //		let username = UserDefaultManager.shared.defaults.value(forKey: "username") as? String
 //        
-//        // Cek apakah setup page perlu ditampilkan
+        // Cek apakah setup page perlu ditampilkan
 //        let identifier  = (username == nil) ? "privacyPolicyVC" : "homeVC"
-//
-//        
-//        let mainStoryBoard = UIStoryboard(name: "homeScreen", bundle: nil)
-//        let viewController = mainStoryBoard.instantiateViewController(withIdentifier: identifier)
-//        
-//        window?.rootViewController = viewController
+
+
+        let mainStoryBoard = UIStoryboard(name: "sessionScreen", bundle: nil)
+        let viewController = mainStoryBoard.instantiateViewController(withIdentifier: "notesVC")
+
+        window?.rootViewController = viewController
         
     }
     
