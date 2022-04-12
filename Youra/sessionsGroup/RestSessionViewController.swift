@@ -6,22 +6,30 @@
 //
 
 import UIKit
+import AVFoundation
 
 class RestSessionViewController: UIViewController {
     
     var backgrounds: [Background] = []
     var quotes: [Quote] = []
+    var musics: [Music] = []
+    var song = AVAudioPlayer()
     
     @IBOutlet weak var circularView: UIView!
     @IBOutlet weak var restTimerLabel: UILabel!
     @IBOutlet weak var endRestSessionButton: UIButton!
     @IBOutlet weak var imageBackground: UIImageView!
     @IBOutlet weak var quotesLabel: UILabel!
+    @IBOutlet weak var pauseButton: UIButton!
+    @IBOutlet weak var noteBGButton: UIView!
+    @IBOutlet weak var noteButton: UIButton!
     
     let foregroundLayer = CAShapeLayer()
     let backgroundLayer = CAShapeLayer()
     var randNumber: Int = 1
     var quotesRandNumber: Int = 0
+    var musicRandNumber: Int = 0
+    var isPaused = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +37,7 @@ class RestSessionViewController: UIViewController {
         // Generate Data from Seeder
         backgrounds = BackgroundSeeder().generateData()
         quotes = BackgroundSeeder().generateQuotes()
+        musics = MusicSeeder().generateData()
         
         // Set View
         randomizeNumber()
@@ -40,6 +49,10 @@ class RestSessionViewController: UIViewController {
         
         quotesLabel.text = quotes[quotesRandNumber].quote
         
+        pauseButton.tintColor = backgrounds[randNumber].pauseButtonColor
+        
+        noteButton.tintColor = backgrounds[randNumber].noteIconColor
+        
         endRestSessionButton.layer.shadowColor = UIColor.black.cgColor
         endRestSessionButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         endRestSessionButton.layer.shadowRadius = 5
@@ -48,6 +61,10 @@ class RestSessionViewController: UIViewController {
         circularView.layer.cornerRadius = circularView.frame.size.width/2
         circularView.clipsToBounds = true
         circularView.backgroundColor = backgrounds[randNumber].circularViewColor
+        
+        noteBGButton.layer.cornerRadius = noteBGButton.frame.size.width/2
+        noteBGButton.clipsToBounds = true
+        noteBGButton.backgroundColor = backgrounds[randNumber].noteButtonBGColor
         
         // Circular Timer Progress
         let center = circularView.center
@@ -78,12 +95,58 @@ class RestSessionViewController: UIViewController {
         view.layer.addSublayer(foregroundLayer)
         
         playAnimation()
+        playSong()
+        song.play()
+    }
+    
+    @IBAction func noteButtonPressed(_ sender: Any) {
+        
+        
+    }
+    
+    @IBAction func pauseButtonPressed(_ sender: Any) {
+        
+        if song.isPlaying {
+            
+            song.pause()
+            isPaused = true
+            pauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+        } else {
+            
+            song.play()
+            isPaused = false
+            pauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+        }
+    }
+    
+    func playSong() {
+        
+        do {
+            
+            song = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: musics[musicRandNumber].title, ofType: "mp3")!))
+            
+            song.prepareToPlay()
+            
+            let audioSession = AVAudioSession.sharedInstance()
+            do {
+                
+                try audioSession.setCategory(AVAudioSession.Category.playback)
+                
+            } catch let sessionError {
+                
+                print(sessionError)
+            }
+            
+        } catch let songPlayerError {
+            print(songPlayerError)
+        }
     }
     
     func randomizeNumber() {
-
+        
         randNumber = Int(arc4random_uniform(6))
         quotesRandNumber = Int(arc4random_uniform(6))
+        musicRandNumber = Int(arc4random_uniform(6))
     }
     
     func playAnimation() {
@@ -121,7 +184,12 @@ class RestSessionViewController: UIViewController {
                 self.foregroundLayer.strokeColor = self.backgrounds[self.randNumber].foregroundLayerColor.cgColor
                 self.restTimerLabel.textColor = self.backgrounds[self.randNumber].timerLabelColor
                 self.quotesLabel.text = self.quotes[self.quotesRandNumber].quote
+                self.pauseButton.tintColor = self.backgrounds[self.randNumber].pauseButtonColor
+                self.noteButton.tintColor = self.backgrounds[self.randNumber].noteIconColor
+                self.noteBGButton.backgroundColor = self.backgrounds[self.randNumber].noteButtonBGColor
                 self.playAnimation()
+                self.playSong()
+                self.song.play()
             })
         )
         

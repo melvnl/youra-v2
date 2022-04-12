@@ -17,6 +17,7 @@ struct Background {
     var circularViewColor: UIColor
     var noteButtonBGColor: UIColor
     var noteIconColor: UIColor
+    var pauseButtonColor: UIColor
 }
 
 struct Quote {
