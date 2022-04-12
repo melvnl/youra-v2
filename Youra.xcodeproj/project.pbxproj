@@ -16,8 +16,11 @@
 		684362192805BB0E00EED0CA /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684362182805BB0E00EED0CA /* AppHelper.swift */; };
 		B088AB262801A597007CFCF6 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B088AB252801A597007CFCF6 /* settingViewController.swift */; };
 		B0D2C22A2801DE1300C2DDD7 /* historyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D2C2292801DE1300C2DDD7 /* historyViewController.swift */; };
-		B0EACB0B2803D82500049098 /* moodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EACB0A2803D82500049098 /* moodViewController.swift */; };
+		B0EACB0B2803D82500049098 /* beforeMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EACB0A2803D82500049098 /* beforeMoodViewController.swift */; };
+		B5A570572805C7E400766AC6 /* afterMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A570562805C7E400766AC6 /* afterMoodViewController.swift */; };
+		B5A570592805CB1500766AC6 /* firstSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5A570582805CB1500766AC6 /* firstSetup.storyboard */; };
 		B5E6FEA827FDA97100350A57 /* pickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6FEA727FDA97100350A57 /* pickerViewController.swift */; };
+		B5F6D0422805D07D001D007B /* secondSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F6D0412805D07D001D007B /* secondSetup.storyboard */; };
 		DB38E5662802702300946B69 /* sessionScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB38E5652802702300946B69 /* sessionScreen.storyboard */; };
 		DB38E5682802781A00946B69 /* RestSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB38E5672802781A00946B69 /* RestSessionViewController.swift */; };
 		DB6AEA872804601B005DE245 /* 03.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DB6AEA812804601A005DE245 /* 03.mp3 */; };
@@ -49,8 +52,11 @@
 		684362182805BB0E00EED0CA /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		B088AB252801A597007CFCF6 /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 		B0D2C2292801DE1300C2DDD7 /* historyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyViewController.swift; sourceTree = "<group>"; };
-		B0EACB0A2803D82500049098 /* moodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moodViewController.swift; sourceTree = "<group>"; };
+		B0EACB0A2803D82500049098 /* beforeMoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = beforeMoodViewController.swift; sourceTree = "<group>"; };
+		B5A570562805C7E400766AC6 /* afterMoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = afterMoodViewController.swift; sourceTree = "<group>"; };
+		B5A570582805CB1500766AC6 /* firstSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = firstSetup.storyboard; sourceTree = "<group>"; };
 		B5E6FEA727FDA97100350A57 /* pickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pickerViewController.swift; sourceTree = "<group>"; };
+		B5F6D0412805D07D001D007B /* secondSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = secondSetup.storyboard; sourceTree = "<group>"; };
 		DB38E5652802702300946B69 /* sessionScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = sessionScreen.storyboard; sourceTree = "<group>"; };
 		DB38E5672802781A00946B69 /* RestSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSessionViewController.swift; sourceTree = "<group>"; };
 		DB6AEA812804601A005DE245 /* 03.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 03.mp3; sourceTree = "<group>"; };
@@ -122,7 +128,8 @@
 		B0EACB092803D80C00049098 /* moodCheckerGroup */ = {
 			isa = PBXGroup;
 			children = (
-				B0EACB0A2803D82500049098 /* moodViewController.swift */,
+				B0EACB0A2803D82500049098 /* beforeMoodViewController.swift */,
+				B5A570562805C7E400766AC6 /* afterMoodViewController.swift */,
 			);
 			path = moodCheckerGroup;
 			sourceTree = "<group>";
@@ -135,6 +142,8 @@
 				DB9DC3CD27FABAA9002F048D /* homeViewController.swift */,
 				B5E6FEA727FDA97100350A57 /* pickerViewController.swift */,
 				DB9DC3CF27FABAA9002F048D /* homeScreen.storyboard */,
+				B5F6D0412805D07D001D007B /* secondSetup.storyboard */,
+				B5A570582805CB1500766AC6 /* firstSetup.storyboard */,
 			);
 			path = homeGroup;
 			sourceTree = "<group>";
@@ -267,7 +276,9 @@
 				DB6AEA872804601B005DE245 /* 03.mp3 in Resources */,
 				DB9DC3D627FABAAA002F048D /* LaunchScreen.storyboard in Resources */,
 				DB9DC3D327FABAAA002F048D /* Assets.xcassets in Resources */,
+				B5F6D0422805D07D001D007B /* secondSetup.storyboard in Resources */,
 				DB6AEA8B2804601B005DE245 /* 05.mp3 in Resources */,
+				B5A570592805CB1500766AC6 /* firstSetup.storyboard in Resources */,
 				DB6AEA882804601B005DE245 /* 01.mp3 in Resources */,
 				DB9DC3D127FABAA9002F048D /* homeScreen.storyboard in Resources */,
 				DB38E5662802702300946B69 /* sessionScreen.storyboard in Resources */,
@@ -289,7 +300,7 @@
 				6843620C2805B6E600EED0CA /* YouraData.xcdatamodeld in Sources */,
 				683CD9F22801D66600ABCD8F /* UserDefaultManager.swift in Sources */,
 				DB6AEA9028046196005DE245 /* MusicSeeder.swift in Sources */,
-				B0EACB0B2803D82500049098 /* moodViewController.swift in Sources */,
+				B0EACB0B2803D82500049098 /* beforeMoodViewController.swift in Sources */,
 				682EBA8E2801D1CE00D10A5E /* DisclaimerViewController.swift in Sources */,
 				B088AB262801A597007CFCF6 /* settingViewController.swift in Sources */,
 				684362152805B96200EED0CA /* SessionData+CoreDataClass.swift in Sources */,
@@ -298,6 +309,7 @@
 				B5E6FEA827FDA97100350A57 /* pickerViewController.swift in Sources */,
 				684362192805BB0E00EED0CA /* AppHelper.swift in Sources */,
 				DB933BAF2801CB7E0019411A /* WorkSessionViewController.swift in Sources */,
+				B5A570572805C7E400766AC6 /* afterMoodViewController.swift in Sources */,
 				DB38E5682802781A00946B69 /* RestSessionViewController.swift in Sources */,
 				DB9DC3CC27FABAA9002F048D /* SceneDelegate.swift in Sources */,
 				B0D2C22A2801DE1300C2DDD7 /* historyViewController.swift in Sources */,
@@ -452,7 +464,7 @@
 				INFOPLIST_FILE = Youra/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = homeScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = firstSetup;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -480,7 +492,7 @@
 				INFOPLIST_FILE = Youra/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = homeScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = firstSetup;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -25,10 +25,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		let username = UserDefaultManager.shared.defaults.value(forKey: "username") as? String
 
         // Cek apakah setup page perlu ditampilkan
-        let identifier  = (username == nil) ? "privacyPolicyVC" : "homeVC"
+        let identifier  = (username == nil) ? "firstNavController" : "secondNavController"
+        let storyboard =  (username == nil) ? "firstSetup" : "secondSetup"
 
-
-        let mainStoryBoard = UIStoryboard(name: "homeScreen", bundle: nil)
+        let mainStoryBoard = UIStoryboard(name: storyboard, bundle: nil)
         let viewController = mainStoryBoard.instantiateViewController(withIdentifier: identifier)
 
         window?.rootViewController = viewController

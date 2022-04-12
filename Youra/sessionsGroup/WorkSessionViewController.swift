@@ -191,9 +191,11 @@ class WorkSessionViewController: UIViewController {
                 self.quotesLabel.text = self.quotes[self.quotesRandNumber].quote
                 self.playAnimation()
                 
-                let storyBoard : UIStoryboard = UIStoryboard(name: "sessionScreen", bundle:nil)
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "restView") as! RestSessionViewController
-                self.present(nextViewController, animated:true, completion:nil)
+                self.performSegue(withIdentifier: "workMoodSegue", sender: nil)
+                
+//                let storyBoard : UIStoryboard = UIStoryboard(name: "sessionScreen", bundle:nil)
+//                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "restView") as! RestSessionViewController
+//                self.present(nextViewController, animated:true, completion:nil)
             })
         )
         
