@@ -19,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let _ = (scene as? UIWindowScene) else { return }
 
-//		UserDefaults.standard.removePersistentDomain(forName: "com.youra.saved.data")
-//		UserDefaults.standard.synchronize()
+		UserDefaults.standard.removePersistentDomain(forName: "com.youra.saved.data")
+		UserDefaults.standard.synchronize()
 
 //		let username = UserDefaultManager.shared.defaults.value(forKey: "username") as? String
 //        
