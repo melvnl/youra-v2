@@ -23,6 +23,10 @@ class WorkSessionViewController: UIViewController {
     let backgroundLayer = CAShapeLayer()
     var randNumber: Int = 0
     var quotesRandNumber: Int = 0
+    var workDuration: TimeInterval? = 0
+    
+    var sessionDuration = Int((UserDefaultManager.shared.defaults.value(forKey: "workSession") as? TimeInterval)! )
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +34,26 @@ class WorkSessionViewController: UIViewController {
         // Generate Data
         backgrounds = BackgroundSeeder().generateData()
         quotes = BackgroundSeeder().generateQuotes()
+        workDuration = UserDefaultManager.shared.defaults.value(forKey: "workSession") as? TimeInterval
         
         // Set View
         randomizeNumber()
         
-        timerLabel.text = "WORK"
+        let hours = sessionDuration / 3600
+        let mins = sessionDuration % 3600 / 60
+        let secs = sessionDuration % 60
+        
+        timerLabel.text = "\(workDuration ?? 0)"
+        if(hours > 0){
+            print("dari set view")
+            print(hours)
+            timerLabel.text = String(hours) + ":" + (mins >= 10 ? String(mins): ("0" + String(mins)) ) + ":" + (secs == 0 ? "00":String(secs))
+        }
+        else{
+            timerLabel.text = String(mins) + ":" + (secs < 10 ? "0" : "") + String(secs)
+        }
+        
+        
         timerLabel.textColor = backgrounds[randNumber].timerLabelColor
         
         imageBackground.image = backgrounds[randNumber].bgTitle
@@ -79,6 +98,11 @@ class WorkSessionViewController: UIViewController {
         view.layer.addSublayer(foregroundLayer)
         
         playAnimation()
+        
+        //set work label timer
+        
+        var timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerCount), userInfo: nil, repeats: true)
+
     }
     
     func randomizeNumber() {
@@ -91,14 +115,33 @@ class WorkSessionViewController: UIViewController {
         
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         basicAnimation.toValue = 1
-        basicAnimation.duration = 60
+        basicAnimation.duration = workDuration ?? 0
         basicAnimation.fillMode = CAMediaTimingFillMode.forwards
         basicAnimation.isRemovedOnCompletion = false
         foregroundLayer.add(basicAnimation, forKey: "basicAnimation")
     }
     
+   @objc func timerCount() {
+       
+       let hours = sessionDuration / 3600
+       let mins = sessionDuration % 3600 / 60
+       let secs = sessionDuration % 60
+        
+       if sessionDuration > 0 {
+           sessionDuration -= 1
+           
+           if(hours > 0){
+               timerLabel.text = String(hours) + ":" + (mins >= 10 ? String(mins): ("0" + String(mins)) ) + ":" + (secs == 0 ? "00":String(secs))
+           }
+           else{
+               timerLabel.text = String(mins) + ":" + (secs < 10 ? "0" : "") + String(secs)
+           }
+           
+           }
+    }
+    
     @IBAction func endSessionTapped(_ sender: Any) {
-//        showAlert()
+        showAlert()
     }
     
     func showAlert() {
@@ -123,6 +166,10 @@ class WorkSessionViewController: UIViewController {
                 self.timerLabel.textColor = self.backgrounds[self.randNumber].timerLabelColor
                 self.quotesLabel.text = self.quotes[self.quotesRandNumber].quote
                 self.playAnimation()
+                
+                let storyBoard : UIStoryboard = UIStoryboard(name: "sessionScreen", bundle:nil)
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "restView") as! RestSessionViewController
+                self.present(nextViewController, animated:true, completion:nil)
             })
         )
         
