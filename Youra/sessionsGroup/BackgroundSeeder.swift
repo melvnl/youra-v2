@@ -21,7 +21,8 @@ class BackgroundSeeder {
                 timerLabelColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1),
                 circularViewColor: UIColor(red: 42/255, green: 33/255, blue: 78/255, alpha: 0.6),
                 noteButtonBGColor: UIColor(red: 167/255, green: 164/255, blue: 172/255, alpha: 1),
-                noteIconColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+                noteIconColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1),
+                pauseButtonColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1)
                 ),
             
             Background(
@@ -31,7 +32,8 @@ class BackgroundSeeder {
                 timerLabelColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1),
                 circularViewColor: UIColor(red: 42/255, green: 33/255, blue: 78/255, alpha: 0.8),
                 noteButtonBGColor: UIColor(red: 167/255, green: 164/255, blue: 172/255, alpha: 1),
-                noteIconColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+                noteIconColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1),
+                pauseButtonColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1)
                 ),
             
             Background(
@@ -41,7 +43,8 @@ class BackgroundSeeder {
                 timerLabelColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1),
                 circularViewColor: UIColor(red: 42/255, green: 33/255, blue: 78/255, alpha: 0.8),
                 noteButtonBGColor: UIColor(red: 167/255, green: 164/255, blue: 172/255, alpha: 1),
-                noteIconColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+                noteIconColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1),
+                pauseButtonColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1)
                 ),
             
             Background(
@@ -51,7 +54,8 @@ class BackgroundSeeder {
                 timerLabelColor: UIColor(red: 85/255, green: 76/255, blue: 107/255, alpha: 1),
                 circularViewColor: UIColor(red: 42/255, green: 33/255, blue: 78/255, alpha: 0.8),
                 noteButtonBGColor: UIColor(red: 217/255, green: 209/255, blue: 236/255, alpha: 1),
-                noteIconColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+                noteIconColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
+                pauseButtonColor: UIColor(red: 85/255, green: 76/255, blue: 107/255, alpha: 1)
                 ),
             
             Background(
@@ -61,7 +65,8 @@ class BackgroundSeeder {
                 timerLabelColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1),
                 circularViewColor: UIColor(red: 42/255, green: 33/255, blue: 78/255, alpha: 0.8),
                 noteButtonBGColor: UIColor(red: 217/255, green: 209/255, blue: 236/255, alpha: 1),
-                noteIconColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+                noteIconColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
+                pauseButtonColor: UIColor(red: 1, green: 1, blue: 1, alpha: 1)
                 ),
             
             Background(
@@ -71,7 +76,8 @@ class BackgroundSeeder {
                 timerLabelColor: UIColor(red: 85/255, green: 76/255, blue: 107/255, alpha: 1),
                 circularViewColor: UIColor(red: 42/255, green: 33/255, blue: 78/255, alpha: 0.8),
                 noteButtonBGColor: UIColor(red: 217/255, green: 209/255, blue: 236/255, alpha: 1),
-                noteIconColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+                noteIconColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
+                pauseButtonColor: UIColor(red: 85/255, green: 76/255, blue: 107/255, alpha: 1)
                 ),
         ]
     }
