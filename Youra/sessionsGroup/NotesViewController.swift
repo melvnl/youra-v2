@@ -9,8 +9,9 @@ import UIKit
 
 class NotesViewController: UIViewController {
 
+
 	@IBOutlet weak var notesTitle: UITextField!
-	@IBOutlet weak var notesBody: UITextField!
+	@IBOutlet weak var notesBody: UITextView!
 	var sessionData = AppHelper.getSessionData()
 
 
