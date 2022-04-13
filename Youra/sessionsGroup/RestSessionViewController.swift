@@ -140,12 +140,12 @@ class RestSessionViewController: UIViewController {
             
             song.pause()
             isPaused = true
-            pauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            pauseButton.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
         } else {
             
             song.play()
             isPaused = false
-            pauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+            pauseButton.setImage(UIImage(systemName: "pause.circle.fill"), for: .normal)
         }
     }
     

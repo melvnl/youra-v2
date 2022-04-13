@@ -16,11 +16,8 @@ class NotesViewController: UIViewController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-
-		self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "info",
-																 style: .plain,
-																 target: self,
-																 action: #selector(showInfo))
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(showInfo))
 
         // Do any additional setup after loading the view.
 		print("Notes")
@@ -33,13 +30,15 @@ class NotesViewController: UIViewController {
 	func showInfo() {
 		let alert = UIAlertController(
 			title: "You’re free to write anything!",
-			message: "You’re feelings \n Lyric you compose \n What happened today \n Poems A story \n And many more!",
+			message: "You’re feelings \n Lyric you compose \n What happened today \n Poems\n A story \n And many more!",
 			preferredStyle: .alert
 		)
 
+        alert.view.tintColor = UIColor(red: 50/255, green: 32/255, blue: 117/255, alpha: 1)
+        
 		alert.addAction(UIAlertAction(
 			title: "Close",
-			style: .destructive,
+			style: .cancel,
 			handler: { action in
 			})
 		)
