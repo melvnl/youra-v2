@@ -229,7 +229,7 @@
         <!--Notes View Controller-->
         <scene sceneID="ffM-3n-WMZ">
             <objects>
-                <viewController storyboardIdentifier="notesVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" interfaceStyle="light" id="Bb9-2o-AjN" customClass="NotesViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="notesVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" interfaceStyle="light" id="Bb9-2o-AjN" customClass="NotesViewController" customModule="Youra" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6RL-NA-9y9">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,9 +256,9 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title for your notes" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oMQ-XH-3kK">
                                 <rect key="frame" x="20" y="280" width="360" height="31"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" smartQuotesType="no"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="top" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mpO-hd-Bjg">
+                            <textField opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Express your feeling here.." textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mpO-hd-Bjg">
                                 <rect key="frame" x="20" y="331" width="350" height="459"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -288,6 +288,10 @@
                     <navigationItem key="navigationItem" id="7YT-uA-nov"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="notesBody" destination="mpO-hd-Bjg" id="YDB-Sr-iI3"/>
+                        <outlet property="notesTitle" destination="oMQ-XH-3kK" id="dXz-eh-3yU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGc-RT-Ph2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -342,6 +346,7 @@
                                     <color key="baseBackgroundColor" red="0.32156862749999998" green="0.29411764709999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="startButtonClick:" destination="HBf-yk-teb" eventType="touchUpInside" id="DKw-vF-yM7"/>
                                     <segue destination="zEm-8Q-CsA" kind="show" id="0o8-gW-576"/>
                                 </connections>
                             </button>
@@ -421,6 +426,7 @@
                                     <color key="baseBackgroundColor" red="0.32156862749999998" green="0.29411764709999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="finishButtonClick:" destination="18J-cC-Wko" eventType="touchUpInside" id="2yF-G7-7HG"/>
                                     <segue destination="Mtr-fi-VvS" kind="show" id="xMJ-rw-SyT"/>
                                 </connections>
                             </button>

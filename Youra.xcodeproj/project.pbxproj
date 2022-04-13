@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		680F5811280665D0003E04F0 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680F5810280665D0003E04F0 /* NotesViewController.swift */; };
 		682EBA8C2801D17900D10A5E /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682EBA8B2801D17900D10A5E /* PrivacyPolicyViewController.swift */; };
 		682EBA8E2801D1CE00D10A5E /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682EBA8D2801D1CE00D10A5E /* DisclaimerViewController.swift */; };
 		683CD9F22801D66600ABCD8F /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683CD9F12801D66600ABCD8F /* UserDefaultManager.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		680F5810280665D0003E04F0 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		682EBA8B2801D17900D10A5E /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		682EBA8D2801D1CE00D10A5E /* DisclaimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = "<group>"; };
 		683CD9F12801D66600ABCD8F /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				DB933BAE2801CB7E0019411A /* WorkSessionViewController.swift */,
 				DB38E5672802781A00946B69 /* RestSessionViewController.swift */,
 				DB38E5652802702300946B69 /* sessionScreen.storyboard */,
+				680F5810280665D0003E04F0 /* NotesViewController.swift */,
 			);
 			path = sessionsGroup;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			files = (
 				DB9DC3CE27FABAA9002F048D /* homeViewController.swift in Sources */,
 				DBA1D67B2802EA46000B54B4 /* BackgroundModel.swift in Sources */,
+				680F5811280665D0003E04F0 /* NotesViewController.swift in Sources */,
 				684362162805B96200EED0CA /* SessionData+CoreDataProperties.swift in Sources */,
 				DB9DC3CA27FABAA9002F048D /* AppDelegate.swift in Sources */,
 				DBA1D67F2802EA79000B54B4 /* BackgroundSeeder.swift in Sources */,
@@ -465,9 +469,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5DUFZTPDQV;
+				DEVELOPMENT_TEAM = 4H5U92937H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Youra/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -480,8 +485,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.HanselMatthew;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rahmatafriyanton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -493,9 +499,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5DUFZTPDQV;
+				DEVELOPMENT_TEAM = 4H5U92937H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Youra/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -508,8 +515,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.HanselMatthew;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rahmatafriyanton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

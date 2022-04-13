@@ -16,31 +16,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo White-3" translatesAutoresizingMaskIntoConstraints="NO" id="xiV-AG-wLP">
-                                <rect key="frame" x="147" y="388" width="120" height="120"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SSBG" translatesAutoresizingMaskIntoConstraints="NO" id="vhl-zT-tmm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SSTop" translatesAutoresizingMaskIntoConstraints="NO" id="qk8-dc-FiK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="yma-Bu-Fm7"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SSBottom" translatesAutoresizingMaskIntoConstraints="NO" id="T5O-nF-nlC">
+                                <rect key="frame" x="0.0" y="731" width="414" height="165"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="165" id="PYw-b6-kRW"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="glv-sJ-UGY">
+                                <rect key="frame" x="50" y="320" width="314" height="256"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SSLogo" translatesAutoresizingMaskIntoConstraints="NO" id="dP6-Mp-MNf">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="isw-3H-7CJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SSYoura" translatesAutoresizingMaskIntoConstraints="NO" id="bJM-ML-aNi">
+                                        <rect key="frame" x="0.0" y="138" width="314" height="118"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xiV-AG-wLP" secondAttribute="trailing" constant="147" id="5l0-6w-NJg"/>
-                            <constraint firstItem="xiV-AG-wLP" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8GE-GU-Ede"/>
-                            <constraint firstItem="xiV-AG-wLP" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="HWr-ah-7uj"/>
-                            <constraint firstItem="xiV-AG-wLP" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="IA2-oZ-Ut7"/>
-                            <constraint firstItem="xiV-AG-wLP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="344" id="Wkz-vp-9Hc"/>
-                            <constraint firstItem="xiV-AG-wLP" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="XeV-cB-S6o"/>
-                            <constraint firstItem="xiV-AG-wLP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="i2n-87-iqu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xiV-AG-wLP" secondAttribute="bottom" constant="354" id="vEp-09-Mey"/>
+                            <constraint firstItem="glv-sJ-UGY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="1Nk-F4-dif"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T5O-nF-nlC" secondAttribute="trailing" id="BS8-SX-Umo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qk8-dc-FiK" secondAttribute="trailing" id="DYg-xm-dOE"/>
+                            <constraint firstItem="qk8-dc-FiK" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="JMR-sq-FJg"/>
+                            <constraint firstAttribute="trailing" secondItem="vhl-zT-tmm" secondAttribute="trailing" id="LkI-r7-cKN"/>
+                            <constraint firstItem="vhl-zT-tmm" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="PeM-g8-04C"/>
+                            <constraint firstItem="glv-sJ-UGY" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="320" id="RLC-MW-dyl"/>
+                            <constraint firstItem="T5O-nF-nlC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ear-GK-vx6"/>
+                            <constraint firstAttribute="bottom" secondItem="T5O-nF-nlC" secondAttribute="bottom" id="iyc-Qe-aut"/>
+                            <constraint firstItem="glv-sJ-UGY" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="oVV-SY-bWe"/>
+                            <constraint firstItem="qk8-dc-FiK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="owy-5m-5Co"/>
+                            <constraint firstItem="glv-sJ-UGY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="tkm-Xc-9sB"/>
+                            <constraint firstAttribute="bottom" secondItem="vhl-zT-tmm" secondAttribute="bottom" id="uH0-w5-TRV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="glv-sJ-UGY" secondAttribute="trailing" constant="50" id="uvU-JC-HZe"/>
+                            <constraint firstItem="vhl-zT-tmm" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="xOD-88-WJL"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Logo White-3" width="305" height="305"/>
+        <image name="SSBG" width="390" height="839"/>
+        <image name="SSBottom" width="390" height="145"/>
+        <image name="SSLogo" width="159" height="143"/>
+        <image name="SSTop" width="390" height="154"/>
+        <image name="SSYoura" width="182" height="57"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
