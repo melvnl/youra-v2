@@ -256,9 +256,9 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title for your notes" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oMQ-XH-3kK">
                                 <rect key="frame" x="20" y="280" width="360" height="31"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" smartQuotesType="no"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="top" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mpO-hd-Bjg">
+                            <textField opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Express your feeling here.." textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mpO-hd-Bjg">
                                 <rect key="frame" x="20" y="331" width="350" height="459"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
