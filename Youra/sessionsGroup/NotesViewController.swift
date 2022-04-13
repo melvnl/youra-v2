@@ -11,7 +11,7 @@ class NotesViewController: UIViewController {
 
 	@IBOutlet weak var notesTitle: UITextField!
 	@IBOutlet weak var notesBody: UITextField!
-
+	var sessionData = AppHelper.getSessionData()
 
 
 	override func viewDidLoad() {
@@ -19,6 +19,9 @@ class NotesViewController: UIViewController {
 
         // Do any additional setup after loading the view.
 		print("Notes")
+		notesTitle.text = sessionData.noteTitle
+		notesBody.text = sessionData.noteBody
+
     }
 
 	override func viewWillDisappear(_ animated: Bool) {
@@ -30,7 +33,6 @@ class NotesViewController: UIViewController {
 	}
 
 	func setNotes() {
-		let sessionData = AppHelper.getSessionData()
 		sessionData.noteTitle = notesTitle.text
 		sessionData.noteBody = notesBody.text
 
