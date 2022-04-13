@@ -210,7 +210,19 @@ class RestSessionViewController: UIViewController {
     
     @IBAction func endSessionTapped(_ sender: Any) {
         showAlert()
+
+		let sessionData = AppHelper.getSessionData()
+		sessionData.restDuration = getWorkDuration()
+
+		AppHelper.initSessionData(sessionData: sessionData)
+		print("Rest Session")
+		print(AppHelper.getSessionData())
+
     }
+
+	func getWorkDuration() -> Double {
+		return Double(UserDefaultManager.shared.defaults.value(forKey: "restSession") as! Int - sessionDuration)
+	}
     
     func showAlert() {
         
@@ -258,13 +270,5 @@ class RestSessionViewController: UIViewController {
         
         present(alert, animated: true)
     }
-
 	
-	@IBAction func startButtonClick(_ sender: Any) {
-		let sessionData = AppHelper.getSessionData()
-
-
-		AppHelper.initSessionData(sessionData: sessionData)
-		print(sessionData)
-	}
 }

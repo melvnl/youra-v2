@@ -127,7 +127,8 @@ class homeViewController: UIViewController {
 		sessionData.createDate = Date()
 
 		AppHelper.initSessionData(sessionData: sessionData)
-//		print(AppHelper.getSessionData())
+		print("Home Screen")
+		print(AppHelper.getSessionData())
 	}
 
 	func generateKey(len:Int) -> String {

@@ -73,5 +73,13 @@ class beforeMoodViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
-	
+	@IBAction func startButtonClick(_ sender: Any) {
+		let sessionData = AppHelper.getSessionData()
+		sessionData.moodBefore = sliderValue
+
+		AppHelper.initSessionData(sessionData: sessionData)
+		print("Before Mood")
+		print(AppHelper.getSessionData())
+	}
+
 }
