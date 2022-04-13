@@ -23,13 +23,17 @@ class detailViewController: UIViewController {
         
 		let detail = AppHelper.tempDetailData
         
-        let startSuffix = Int(AppHelper.getStringTime(date: (detail?.createDate)!)) ?? 0 > 9 ? " AM" : " PM"
-        let endSuffix =  Int(AppHelper.getStringTime(date: (detail?.endDate)!)) ?? 0 > 9 ? " AM" : " PM"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
         
+        let start = dateFormatter.date(from: AppHelper.getStringTime(date: (detail?.createDate)!))
+        let end = dateFormatter.date(from: AppHelper.getStringTime(date: (detail?.createDate)!))
+        dateFormatter.dateFormat = "h:mm a"
+      
 		noteTitle.text = detail?.noteTitle
 		noteBody.text  = detail?.noteBody
-		startTime.text = AppHelper.getStringTime(date: (detail?.createDate)!) + startSuffix
-		endTime.text = AppHelper.getStringTime(date: (detail?.endDate)!) + endSuffix
+		startTime.text = dateFormatter.string(from: start!)
+		endTime.text = dateFormatter.string(from: end!)
 		moodBefore.image = AppHelper.setMoodImage(mood: detail!.moodBefore)
 		moodAfter.image = AppHelper.setMoodImage(mood: detail!.moodAfter)
 		
