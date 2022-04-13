@@ -15,7 +15,7 @@ class beforeMoodViewController: UIViewController {
 
 	let context = (UIApplication.self.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
-	var sliderValue:Float = 0.0
+	var sliderValue:Float = 0.5
     
     @IBOutlet weak var button: UIButton!
     @IBAction func getSliderValue(_ sender: UISlider) {

@@ -19,7 +19,6 @@ class detailViewController: UIViewController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-
         
 		let detail = AppHelper.tempDetailData
         
