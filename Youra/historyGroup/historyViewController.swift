@@ -7,23 +7,28 @@
 
 import UIKit
 
-class historyViewController: UIViewController {
+class historyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     struct History {
             let time: String
         }
+    
+//    let histories = ["tralala","trilili","lele"]
 
     let histories = [
         History(time: "10.00 - 15.00"),
         History(time: "something"),
     ]
-    
+
 
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("history called")
+        
+        tableView.delegate = self
+        tableView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
@@ -33,8 +38,11 @@ class historyViewController: UIViewController {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "allCell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "allCell")
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "allCell", for: indexPath)
+//        cell.textLabel?.text = histories[indexPath.row]
+        
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "allCell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "allCell")
+//
         let history = histories[indexPath.row]
         cell.textLabel?.text = history.time
 
