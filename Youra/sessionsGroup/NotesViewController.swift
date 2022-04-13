@@ -17,12 +17,35 @@ class NotesViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 
+		self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "info",
+																 style: .plain,
+																 target: self,
+																 action: #selector(showInfo))
+
         // Do any additional setup after loading the view.
 		print("Notes")
 		notesTitle.text = sessionData.noteTitle
 		notesBody.text = sessionData.noteBody
 
     }
+
+	@objc
+	func showInfo() {
+		let alert = UIAlertController(
+			title: "You’re free to write anything!",
+			message: "You’re feelings \n Lyric you compose \n What happened today \n Poems A story \n And many more!",
+			preferredStyle: .alert
+		)
+
+		alert.addAction(UIAlertAction(
+			title: "Close",
+			style: .destructive,
+			handler: { action in
+			})
+		)
+
+		present(alert, animated: true)
+	}
 
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
