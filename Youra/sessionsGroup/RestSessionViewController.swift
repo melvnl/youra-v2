@@ -32,7 +32,7 @@ class RestSessionViewController: UIViewController {
     var isPaused = false
     var restDuration: TimeInterval? = 0
     
-    var sessionDuration = Int((UserDefaultManager.shared.defaults.value(forKey: "restSession") as? TimeInterval)! )
+    var sessionDuration = Int((UserDefaultManager.shared.defaults.value(forKey: "restSession") as? TimeInterval) ?? 0 )
     
     override func viewDidLoad() {
         super.viewDidLoad()
