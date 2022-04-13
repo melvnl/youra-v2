@@ -19,6 +19,7 @@
 		B088AB262801A597007CFCF6 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B088AB252801A597007CFCF6 /* settingViewController.swift */; };
 		B0D2C22A2801DE1300C2DDD7 /* historyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D2C2292801DE1300C2DDD7 /* historyViewController.swift */; };
 		B0EACB0B2803D82500049098 /* beforeMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EACB0A2803D82500049098 /* beforeMoodViewController.swift */; };
+		B5A06AF22806C31800C6F6E4 /* colorUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06AF12806C31800C6F6E4 /* colorUserDefaults.swift */; };
 		B5A570572805C7E400766AC6 /* afterMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A570562805C7E400766AC6 /* afterMoodViewController.swift */; };
 		B5A570592805CB1500766AC6 /* firstSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5A570582805CB1500766AC6 /* firstSetup.storyboard */; };
 		B5CF25462806767500357E24 /* historyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF25442806767500357E24 /* historyTableViewCell.swift */; };
@@ -59,6 +60,7 @@
 		B088AB252801A597007CFCF6 /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 		B0D2C2292801DE1300C2DDD7 /* historyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyViewController.swift; sourceTree = "<group>"; };
 		B0EACB0A2803D82500049098 /* beforeMoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = beforeMoodViewController.swift; sourceTree = "<group>"; };
+		B5A06AF12806C31800C6F6E4 /* colorUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorUserDefaults.swift; sourceTree = "<group>"; };
 		B5A570562805C7E400766AC6 /* afterMoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = afterMoodViewController.swift; sourceTree = "<group>"; };
 		B5A570582805CB1500766AC6 /* firstSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = firstSetup.storyboard; sourceTree = "<group>"; };
 		B5CF25442806767500357E24 /* historyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyTableViewCell.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				B088AB252801A597007CFCF6 /* settingViewController.swift */,
+				B5A06AF12806C31800C6F6E4 /* colorUserDefaults.swift */,
 			);
 			path = settingGroup;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			files = (
 				68C05B132806CC710023484D /* SessionData+CoreDataProperties.swift in Sources */,
 				DB9DC3CE27FABAA9002F048D /* homeViewController.swift in Sources */,
+				B5A06AF22806C31800C6F6E4 /* colorUserDefaults.swift in Sources */,
 				DBA1D67B2802EA46000B54B4 /* BackgroundModel.swift in Sources */,
 				680F5811280665D0003E04F0 /* NotesViewController.swift in Sources */,
 				DB9DC3CA27FABAA9002F048D /* AppDelegate.swift in Sources */,

@@ -13,6 +13,7 @@ class settingViewController: UIViewController, UNUserNotificationCenterDelegate 
     var everyday = false
     var weekday = false
     
+    
 
     @IBAction func toggleEveryday(_ sender: Any) {
         print("everydat called")
@@ -102,6 +103,17 @@ class settingViewController: UIViewController, UNUserNotificationCenterDelegate 
                 else{
                     UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [uuidString])
                 }
+    }
+    
+    @IBAction func lightModePressed(_ sender: Any) {
+        colorUserDefaults.colorshared.theme = .light
+        self.view.window?.overrideUserInterfaceStyle = colorUserDefaults.colorshared.theme.getUserInterfaceStyle()
+    }
+    
+    
+    @IBAction func darkModePressed(_ sender: Any) {
+        colorUserDefaults.colorshared.theme = .dark
+        self.view.window?.overrideUserInterfaceStyle = colorUserDefaults.colorshared.theme.getUserInterfaceStyle()
     }
     
     override func viewDidLoad() {

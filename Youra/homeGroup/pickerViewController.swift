@@ -17,7 +17,7 @@ class CustomModalViewController: UIViewController {
         done.setTitle("Done", for: .normal)
         done.addTarget(self, action: #selector(handleCloseAction), for: .touchUpInside)
         done.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.bold)
-        done.setTitleColor(UIColor(red: 118/255.0, green: 108/255.0, blue: 160/255.0, alpha: 1.0), for: .normal)
+        done.setTitleColor(UIColor(named: "purpleHeader"), for: .normal)
         return done
     }()
     
@@ -25,17 +25,8 @@ class CustomModalViewController: UIViewController {
         let cancel = UIButton()
         cancel.setTitle("Cancel", for: .normal)
         cancel.addTarget(self, action: #selector(handleCancelAction), for: .touchUpInside)
-        cancel.setTitleColor(UIColor(red: 118/255.0, green: 108/255.0, blue: 160/255.0, alpha: 1.0), for: .normal)
+        cancel.setTitleColor(UIColor(named: "purpleHeader"), for: .normal)
         return cancel
-    }()
-    
-    lazy var pickerTitle: UILabel = {
-        let pickTitle = UILabel()
-        pickTitle.text = "Edit Duration"
-        pickTitle.font = UIFont.boldSystemFont(ofSize: 17)
-        pickTitle.textColor = UIColor.black
-        pickTitle.textAlignment = .center
-        return pickTitle
     }()
     
     lazy var timePicker: UIDatePicker = {
@@ -43,12 +34,6 @@ class CustomModalViewController: UIViewController {
         picker.datePickerMode = .countDownTimer
         picker.addTarget(self, action: #selector(respondToChanges(picker:)), for: .valueChanged)
         picker.minuteInterval = 5
-        
-//        var components = DateComponents()
-//        components.minute = 30
-//        let date = Calendar.current.date(from: components)!
-//        picker.setDate(date, animated: true)
-        
         return picker
     }()
     
@@ -70,7 +55,7 @@ class CustomModalViewController: UIViewController {
     
     lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "pickerColor")
         view.layer.cornerRadius = 16
         view.clipsToBounds = true
         return view
