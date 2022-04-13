@@ -86,7 +86,7 @@ class afterMoodViewController: UIViewController {
 	}
 
 	func saveSessionData() {
-		let newSessionData = AppHelper.getSessionData()
+		_ = AppHelper.getSessionData()
 		do {
 			try self.context.save()
 		} catch {

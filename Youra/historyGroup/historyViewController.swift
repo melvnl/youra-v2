@@ -8,17 +8,7 @@
 import UIKit
 
 class historyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    struct History {
-            let time: String
-        }
-
 	let context = (UIApplication.self.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
-    let histories = [
-        History(time: "4 Oct 22 , 10.00 - 15.00"),
-        History(time: "5 Oct 22 , 11.00 - 14.00"),
-    ]
 
 	var items:[SessionData] = []
 
@@ -58,6 +48,7 @@ class historyViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		AppHelper.initTempDetailData(sessionData: items[indexPath.row])
 		self.performSegue(withIdentifier: "detailSegue", sender: self)
 	}
 

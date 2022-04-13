@@ -9,21 +9,35 @@ import UIKit
 
 class detailViewController: UIViewController {
 
-    override func viewDidLoad() {
+
+	@IBOutlet weak var startTime: UILabel!
+	@IBOutlet weak var moodBefore: UIImageView!
+	@IBOutlet weak var endTime: UILabel!
+	@IBOutlet weak var moodAfter: UIImageView!
+	@IBOutlet weak var noteTitle: UILabel!
+	@IBOutlet weak var noteBody: UILabel!
+
+	override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+		let detail = AppHelper.tempDetailData
+		noteTitle.text = detail?.noteTitle
+		noteBody.text  = detail?.noteBody
+		startTime.text = AppHelper.getStringTime(date: (detail?.createDate)!)
+		endTime.text = AppHelper.getStringTime(date: (detail?.endDate)!)
+		moodBefore.image = AppHelper.setMoodImage(mood: detail!.moodBefore)
+		moodAfter.image = AppHelper.setMoodImage(mood: detail!.moodAfter)
+		
     }
-    
 
-    /*
-    // MARK: - Navigation
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+		if self.isMovingFromParent {
+			AppHelper.destroyTempDetailData()
+		}
+	}
+
+
 
 }
