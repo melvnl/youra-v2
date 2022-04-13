@@ -192,6 +192,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="KkE-Zw-rDZ"/>
+                    <connections>
+                        <outlet property="endTime" destination="49n-Vx-knA" id="lh6-Vp-lxF"/>
+                        <outlet property="moodAfter" destination="FJb-kF-sNI" id="jP9-RX-1Up"/>
+                        <outlet property="moodBefore" destination="JlR-vS-46w" id="FLw-NA-QWo"/>
+                        <outlet property="noteBody" destination="g7N-Z4-iXm" id="lbP-bn-bOJ"/>
+                        <outlet property="noteTitle" destination="wf1-wn-9ek" id="k6s-RO-c0b"/>
+                        <outlet property="startTime" destination="WsL-bK-rG3" id="UDj-qq-is3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0x-H8-ToM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
