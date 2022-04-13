@@ -7,13 +7,48 @@
 
 import UIKit
 
-class historyViewController: UIViewController {
+class historyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    struct History {
+            let time: String
+        }
 
+    let histories = [
+        History(time: "4 Oct 22 , 10.00 - 15.00"),
+        History(time: "5 Oct 22 , 11.00 - 14.00"),
+    ]
+
+
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("history called")
+        
+        let nib = UINib(nibName: "historyTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "historyTableViewCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = .clear
+        tableView.layer.cornerRadius = 10
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return histories.count
+    }
 
-        // Do any additional setup after loading the view.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "historyTableViewCell", for: indexPath) as! historyTableViewCell
+        
+        let selectedBg = UIView()
+        selectedBg.backgroundColor = .clear
+        cell.selectedBackgroundView = selectedBg
+        
+        let history = histories[indexPath.row]
+        cell.myLabel.text = history.time
+
+        return cell
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,6 +60,9 @@ class historyViewController: UIViewController {
         super.viewWillDisappear(animated)
     }
     
+    
+    }
+
 
     /*
     // MARK: - Navigation
@@ -36,4 +74,4 @@ class historyViewController: UIViewController {
     }
     */
 
-}
+
