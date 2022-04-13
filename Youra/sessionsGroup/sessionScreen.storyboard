@@ -261,39 +261,37 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" smartQuotesType="no"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Express your feeling here.." textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mpO-hd-Bjg">
-                                <rect key="frame" x="20" y="331" width="350" height="459"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="6bM-X7-Uv6">
+                                <rect key="frame" x="20" y="321" width="350" height="509"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dFV-SD-FSw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dFV-SD-FSw" firstAttribute="trailing" secondItem="mpO-hd-Bjg" secondAttribute="trailing" constant="20" id="0YJ-eU-Yyd"/>
                             <constraint firstItem="q0K-WC-Luo" firstAttribute="leading" secondItem="dFV-SD-FSw" secondAttribute="leading" constant="20" id="8B2-wP-0rD"/>
-                            <constraint firstItem="dFV-SD-FSw" firstAttribute="bottom" secondItem="mpO-hd-Bjg" secondAttribute="bottom" constant="20" id="FEz-G3-0EZ"/>
                             <constraint firstItem="oMQ-XH-3kK" firstAttribute="top" secondItem="oh3-WX-pFH" secondAttribute="bottom" constant="10" id="Heu-D0-C29"/>
                             <constraint firstItem="oh3-WX-pFH" firstAttribute="leading" secondItem="6RL-NA-9y9" secondAttribute="leading" id="Iep-xX-L1Q"/>
                             <constraint firstAttribute="trailing" secondItem="oh3-WX-pFH" secondAttribute="trailing" id="MS3-JD-QYR"/>
                             <constraint firstItem="oh3-WX-pFH" firstAttribute="top" secondItem="6RL-NA-9y9" secondAttribute="top" id="PO5-9O-1rp"/>
                             <constraint firstItem="oMQ-XH-3kK" firstAttribute="leading" secondItem="dFV-SD-FSw" secondAttribute="leading" constant="20" id="WO1-og-YNk"/>
                             <constraint firstItem="dFV-SD-FSw" firstAttribute="trailing" secondItem="iLv-AK-vf1" secondAttribute="trailing" constant="20" id="WW1-mN-WEv"/>
-                            <constraint firstItem="mpO-hd-Bjg" firstAttribute="leading" secondItem="dFV-SD-FSw" secondAttribute="leading" constant="20" id="X5s-Bk-cmI"/>
                             <constraint firstItem="q0K-WC-Luo" firstAttribute="top" secondItem="iLv-AK-vf1" secondAttribute="bottom" constant="7" id="Zme-rz-Tcq"/>
                             <constraint firstItem="dFV-SD-FSw" firstAttribute="trailing" secondItem="oMQ-XH-3kK" secondAttribute="trailing" constant="10" id="dB5-Hc-oqb"/>
                             <constraint firstItem="dFV-SD-FSw" firstAttribute="trailing" secondItem="q0K-WC-Luo" secondAttribute="trailing" constant="20" id="p8E-5k-4dZ"/>
                             <constraint firstItem="iLv-AK-vf1" firstAttribute="leading" secondItem="dFV-SD-FSw" secondAttribute="leading" constant="20" id="sQN-dG-GMF"/>
                             <constraint firstItem="iLv-AK-vf1" firstAttribute="top" secondItem="6RL-NA-9y9" secondAttribute="top" constant="100" id="x3t-Y0-LJ6"/>
-                            <constraint firstItem="mpO-hd-Bjg" firstAttribute="top" secondItem="oMQ-XH-3kK" secondAttribute="bottom" constant="20" id="yXj-Jx-cJm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7YT-uA-nov"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="notesBody" destination="mpO-hd-Bjg" id="YDB-Sr-iI3"/>
-                        <outlet property="notesTitle" destination="oMQ-XH-3kK" id="dXz-eh-3yU"/>
+                        <outlet property="notesBody" destination="6bM-X7-Uv6" id="Bf4-Ce-Kvv"/>
+                        <outlet property="notesTitle" destination="oMQ-XH-3kK" id="4ZL-HV-7FV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGc-RT-Ph2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -556,14 +554,17 @@
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="reminderBackground" width="330" height="88"/>
         <namedColor name="purpleHeader">
-            <color red="0.25490196078431371" green="0.22745098039215686" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.25499999523162842" green="0.22699999809265137" blue="0.36100000143051147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="purpleSubtitle">
-            <color red="0.26666666666666666" green="0.30196078431372547" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.2669999897480011" green="0.30199998617172241" blue="0.45500001311302185" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="sliderColor">
-            <color red="0.32156862745098036" green="0.29411764705882354" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.32199999690055847" green="0.29399999976158142" blue="0.43500000238418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
