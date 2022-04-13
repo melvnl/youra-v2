@@ -76,6 +76,7 @@ class afterMoodViewController: UIViewController {
 	@IBAction func finishButtonClick(_ sender: Any) {
 		let sessionData = AppHelper.getSessionData()
 		sessionData.moodAfter = sliderValue
+		sessionData.endDate = Date()
 
 		AppHelper.initSessionData(sessionData: sessionData)
 		print("After Mood")
