@@ -342,7 +342,6 @@
                                     <color key="baseBackgroundColor" red="0.32156862749999998" green="0.29411764709999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="startButtonClick:" destination="HBf-yk-teb" eventType="touchUpInside" id="9qg-iE-iyO"/>
                                     <segue destination="zEm-8Q-CsA" kind="show" id="0o8-gW-576"/>
                                 </connections>
                             </button>
@@ -418,7 +417,7 @@
                                 <color key="backgroundColor" red="0.32156862749999998" green="0.29411764709999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.32156862749999998" green="0.29411764709999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Start" cornerStyle="medium">
+                                <buttonConfiguration key="configuration" style="filled" title="Finish" cornerStyle="medium">
                                     <color key="baseBackgroundColor" red="0.32156862749999998" green="0.29411764709999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>

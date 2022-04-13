@@ -29,13 +29,13 @@ class homeViewController: UIViewController {
         
         switch hour {
           case 5...11:
-            goodLabel.text = "Good Morning"
+            goodLabel.text = "Good Morning, "
 
           case 12...17:
-            goodLabel.text = "Good Afternoon"
+            goodLabel.text = "Good Afternoon, "
 
           default:
-            goodLabel.text = "Good Evening"
+            goodLabel.text = "Good Evening, "
         }
         
         usernameLabel.text = UserDefaultManager.shared.defaults.value(forKey: "username") as? String
@@ -44,6 +44,16 @@ class homeViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.funcName), name: NSNotification.Name(rawValue: "pickerClosed"), object: nil)
         
         updateLabel()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let workTime = Int((UserDefaultManager.shared.defaults.value(forKey: "workSession") as? TimeInterval) ?? 0 )
+        
+        let restTime = Int((UserDefaultManager.shared.defaults.value(forKey: "restSession") as? TimeInterval) ?? 0 )
+        
+        if(workTime == 0 || restTime == 0) {
+            showAlert()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,6 +82,26 @@ class homeViewController: UIViewController {
         vc.parentButton = "rest"
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: false)
+    }
+    
+    func showAlert() {
+        
+        let alert = UIAlertController(
+            title: "Empty Session!",
+            message: "Select your work and rest duration",
+            preferredStyle: .alert
+        )
+        
+        alert.view.tintColor = UIColor(red: 50/255, green: 32/255, blue: 117/255, alpha: 1)
+        
+        alert.addAction(UIAlertAction(
+            title: "Close",
+            style: .destructive,
+            handler: { action in
+            })
+        )
+        
+        present(alert, animated: true)
     }
     
     func stringFromTimeInterval(interval: TimeInterval) -> String{

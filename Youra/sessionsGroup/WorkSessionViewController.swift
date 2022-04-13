@@ -25,7 +25,7 @@ class WorkSessionViewController: UIViewController {
     var quotesRandNumber: Int = 0
     var workDuration: TimeInterval? = 0
     
-    var sessionDuration = Int((UserDefaultManager.shared.defaults.value(forKey: "workSession") as? TimeInterval)! )
+    var sessionDuration = Int((UserDefaultManager.shared.defaults.value(forKey: "workSession") as? TimeInterval) ?? 0 )
     
     
     override func viewDidLoad() {
