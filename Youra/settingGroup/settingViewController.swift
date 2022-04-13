@@ -13,8 +13,8 @@ class settingViewController: UIViewController, UNUserNotificationCenterDelegate 
     var everyday = false
     var weekday = false
     
+    @IBOutlet weak var usernameLabel: UILabel!
     
-
     @IBAction func toggleEveryday(_ sender: Any) {
         print("everydat called")
         everyday = !everyday
@@ -118,7 +118,8 @@ class settingViewController: UIViewController, UNUserNotificationCenterDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        usernameLabel.text = UserDefaultManager.shared.defaults.value(forKey: "username") as? String
         
         print("called")
         

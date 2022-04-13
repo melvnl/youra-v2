@@ -11,8 +11,8 @@ class DisclaimerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        overrideUserInterfaceStyle = .light
     }
     
     override func viewWillAppear(_ animated: Bool) {

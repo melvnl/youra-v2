@@ -11,11 +11,11 @@ class historyViewController: UIViewController, UITableViewDelegate, UITableViewD
 	let context = (UIApplication.self.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
 	var items:[SessionData] = []
-
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         print("history called")
         
@@ -25,7 +25,8 @@ class historyViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         tableView.backgroundColor = .clear
         tableView.layer.cornerRadius = 10
-
+//        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
 		fetchHistory()
         
     }
