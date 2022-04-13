@@ -8,12 +8,37 @@
 import UIKit
 
 class historyViewController: UIViewController {
+    
+    struct History {
+            let time: String
+        }
 
+    let histories = [
+        History(time: "10.00 - 15.00"),
+        History(time: "something"),
+    ]
+    
+
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("history called")
 
         // Do any additional setup after loading the view.
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return histories.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "allCell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "allCell")
+
+        let history = histories[indexPath.row]
+        cell.textLabel?.text = history.time
+
+        return cell
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,6 +50,9 @@ class historyViewController: UIViewController {
         super.viewWillDisappear(animated)
     }
     
+    
+    }
+
 
     /*
     // MARK: - Navigation
@@ -36,4 +64,4 @@ class historyViewController: UIViewController {
     }
     */
 
-}
+
