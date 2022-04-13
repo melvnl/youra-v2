@@ -47,13 +47,16 @@ class historyViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let history = histories[indexPath.row]
         cell.myLabel.text = history.time
-
+        
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       self.performSegue(withIdentifier: "detailSegue", sender: self)
+   }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
     override func viewWillDisappear(_ animated: Bool) {

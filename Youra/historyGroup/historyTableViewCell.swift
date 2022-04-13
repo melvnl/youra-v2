@@ -17,9 +17,9 @@ class historyTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.cornerRadius = 10
-        self.backgroundColor = .clear
+//        self.backgroundColor = .clear
         
-        let cellBg = UIImage(named: "tableViewCell.png")
+        let cellBg = UIImage(named: "reminderBackground.png")
         self.backgroundView = UIImageView(image: cellBg)
         // Initialization code
     }

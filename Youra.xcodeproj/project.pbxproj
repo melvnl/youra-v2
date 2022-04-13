@@ -15,6 +15,7 @@
 		684362152805B96200EED0CA /* SessionData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684362132805B96200EED0CA /* SessionData+CoreDataClass.swift */; };
 		684362162805B96200EED0CA /* SessionData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684362142805B96200EED0CA /* SessionData+CoreDataProperties.swift */; };
 		684362192805BB0E00EED0CA /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684362182805BB0E00EED0CA /* AppHelper.swift */; };
+		B02B087D28069A1F0047545D /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B087C28069A1F0047545D /* detailViewController.swift */; };
 		B088AB262801A597007CFCF6 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B088AB252801A597007CFCF6 /* settingViewController.swift */; };
 		B0D2C22A2801DE1300C2DDD7 /* historyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D2C2292801DE1300C2DDD7 /* historyViewController.swift */; };
 		B0EACB0B2803D82500049098 /* beforeMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EACB0A2803D82500049098 /* beforeMoodViewController.swift */; };
@@ -54,6 +55,7 @@
 		684362132805B96200EED0CA /* SessionData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		684362142805B96200EED0CA /* SessionData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		684362182805BB0E00EED0CA /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
+		B02B087C28069A1F0047545D /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		B088AB252801A597007CFCF6 /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 		B0D2C2292801DE1300C2DDD7 /* historyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyViewController.swift; sourceTree = "<group>"; };
 		B0EACB0A2803D82500049098 /* beforeMoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = beforeMoodViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				B0D2C2292801DE1300C2DDD7 /* historyViewController.swift */,
 				B5CF25442806767500357E24 /* historyTableViewCell.swift */,
 				B5CF25452806767500357E24 /* historyTableViewCell.xib */,
+				B02B087C28069A1F0047545D /* detailViewController.swift */,
 			);
 			path = historyGroup;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				DB38E5682802781A00946B69 /* RestSessionViewController.swift in Sources */,
 				DB9DC3CC27FABAA9002F048D /* SceneDelegate.swift in Sources */,
 				B0D2C22A2801DE1300C2DDD7 /* historyViewController.swift in Sources */,
+				B02B087D28069A1F0047545D /* detailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
