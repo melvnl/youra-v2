@@ -96,7 +96,7 @@ class homeViewController: UIViewController {
         
         alert.addAction(UIAlertAction(
             title: "Close",
-            style: .destructive,
+            style: .cancel,
             handler: { action in
             })
         )
