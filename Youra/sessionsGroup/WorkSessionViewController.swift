@@ -101,7 +101,7 @@ class WorkSessionViewController: UIViewController {
         
         //set work label timer
         
-        var timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerCount), userInfo: nil, repeats: true)
+		_ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerCount), userInfo: nil, repeats: true)
 
     }
     

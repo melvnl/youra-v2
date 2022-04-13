@@ -8,15 +8,9 @@
 import UIKit
 
 class historyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    struct History {
-            let time: String
-        }
+	let context = (UIApplication.self.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
-    let histories = [
-        History(time: "4 Oct 22 , 10.00 - 15.00"),
-        History(time: "5 Oct 22 , 11.00 - 14.00"),
-    ]
+	var items:[SessionData] = []
 
 
     @IBOutlet weak var tableView: UITableView!
@@ -31,11 +25,13 @@ class historyViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         tableView.backgroundColor = .clear
         tableView.layer.cornerRadius = 10
+
+		fetchHistory()
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return histories.count
+        return items.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,36 +41,35 @@ class historyViewController: UIViewController, UITableViewDelegate, UITableViewD
         selectedBg.backgroundColor = .clear
         cell.selectedBackgroundView = selectedBg
         
-        let history = histories[indexPath.row]
-        cell.myLabel.text = history.time
+        let history = items[indexPath.row]
+		cell.myLabel.text = AppHelper.getStringDateTime(startDate: history.createDate!, endDate:  history.endDate!)
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       self.performSegue(withIdentifier: "detailSegue", sender: self)
-   }
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		AppHelper.initTempDetailData(sessionData: items[indexPath.row])
+		self.performSegue(withIdentifier: "detailSegue", sender: self)
+	}
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+	}
+
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+	}
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    
-    
-    }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+	func fetchHistory() {
+		do {
+			self.items = try context.fetch(SessionData.fetchRequest())
+			DispatchQueue.main.async {
+				self.tableView.reloadData()
+			}
+		} catch {
+			print("Gagal mendapatkan data")
+		}
 
 
+	}
+}

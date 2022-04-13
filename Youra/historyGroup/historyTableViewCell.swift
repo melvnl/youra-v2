@@ -13,7 +13,6 @@ class historyTableViewCell: UITableViewCell {
     @IBOutlet var myImageView: UIImageView!
     
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.cornerRadius = 10

@@ -12,9 +12,9 @@
 		682EBA8E2801D1CE00D10A5E /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682EBA8D2801D1CE00D10A5E /* DisclaimerViewController.swift */; };
 		683CD9F22801D66600ABCD8F /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683CD9F12801D66600ABCD8F /* UserDefaultManager.swift */; };
 		6843620C2805B6E600EED0CA /* YouraData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6843620A2805B6E600EED0CA /* YouraData.xcdatamodeld */; };
-		684362152805B96200EED0CA /* SessionData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684362132805B96200EED0CA /* SessionData+CoreDataClass.swift */; };
-		684362162805B96200EED0CA /* SessionData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684362142805B96200EED0CA /* SessionData+CoreDataProperties.swift */; };
 		684362192805BB0E00EED0CA /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684362182805BB0E00EED0CA /* AppHelper.swift */; };
+		68C05B122806CC710023484D /* SessionData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C05B102806CC710023484D /* SessionData+CoreDataClass.swift */; };
+		68C05B132806CC710023484D /* SessionData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C05B112806CC710023484D /* SessionData+CoreDataProperties.swift */; };
 		B02B087D28069A1F0047545D /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B087C28069A1F0047545D /* detailViewController.swift */; };
 		B088AB262801A597007CFCF6 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B088AB252801A597007CFCF6 /* settingViewController.swift */; };
 		B0D2C22A2801DE1300C2DDD7 /* historyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D2C2292801DE1300C2DDD7 /* historyViewController.swift */; };
@@ -53,9 +53,9 @@
 		682EBA8D2801D1CE00D10A5E /* DisclaimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = "<group>"; };
 		683CD9F12801D66600ABCD8F /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		6843620B2805B6E600EED0CA /* YouraData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YouraData.xcdatamodel; sourceTree = "<group>"; };
-		684362132805B96200EED0CA /* SessionData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		684362142805B96200EED0CA /* SessionData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		684362182805BB0E00EED0CA /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
+		68C05B102806CC710023484D /* SessionData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		68C05B112806CC710023484D /* SessionData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B02B087C28069A1F0047545D /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		B088AB252801A597007CFCF6 /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 		B0D2C2292801DE1300C2DDD7 /* historyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyViewController.swift; sourceTree = "<group>"; };
@@ -112,8 +112,8 @@
 		68B985792801D5F20091F3B3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				684362132805B96200EED0CA /* SessionData+CoreDataClass.swift */,
-				684362142805B96200EED0CA /* SessionData+CoreDataProperties.swift */,
+				68C05B102806CC710023484D /* SessionData+CoreDataClass.swift */,
+				68C05B112806CC710023484D /* SessionData+CoreDataProperties.swift */,
 				683CD9F12801D66600ABCD8F /* UserDefaultManager.swift */,
 			);
 			path = Model;
@@ -308,21 +308,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68C05B132806CC710023484D /* SessionData+CoreDataProperties.swift in Sources */,
 				DB9DC3CE27FABAA9002F048D /* homeViewController.swift in Sources */,
 				B5A06AF22806C31800C6F6E4 /* colorUserDefaults.swift in Sources */,
 				DBA1D67B2802EA46000B54B4 /* BackgroundModel.swift in Sources */,
 				680F5811280665D0003E04F0 /* NotesViewController.swift in Sources */,
-				684362162805B96200EED0CA /* SessionData+CoreDataProperties.swift in Sources */,
 				DB9DC3CA27FABAA9002F048D /* AppDelegate.swift in Sources */,
 				DBA1D67F2802EA79000B54B4 /* BackgroundSeeder.swift in Sources */,
 				6843620C2805B6E600EED0CA /* YouraData.xcdatamodeld in Sources */,
 				B5CF25462806767500357E24 /* historyTableViewCell.swift in Sources */,
+				68C05B122806CC710023484D /* SessionData+CoreDataClass.swift in Sources */,
 				683CD9F22801D66600ABCD8F /* UserDefaultManager.swift in Sources */,
 				DB6AEA9028046196005DE245 /* MusicSeeder.swift in Sources */,
 				B0EACB0B2803D82500049098 /* beforeMoodViewController.swift in Sources */,
 				682EBA8E2801D1CE00D10A5E /* DisclaimerViewController.swift in Sources */,
 				B088AB262801A597007CFCF6 /* settingViewController.swift in Sources */,
-				684362152805B96200EED0CA /* SessionData+CoreDataClass.swift in Sources */,
 				DB6AEA8E28046166005DE245 /* MusicModel.swift in Sources */,
 				682EBA8C2801D17900D10A5E /* PrivacyPolicyViewController.swift in Sources */,
 				B5E6FEA827FDA97100350A57 /* pickerViewController.swift in Sources */,
