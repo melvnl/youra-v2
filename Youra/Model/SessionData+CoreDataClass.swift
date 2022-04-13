@@ -2,7 +2,7 @@
 //  SessionData+CoreDataClass.swift
 //  Youra
 //
-//  Created by Rahmat Afriyanton on 12/04/22.
+//  Created by Rahmat Afriyanton on 13/04/22.
 //
 //
 
