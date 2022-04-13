@@ -232,7 +232,7 @@ class RestSessionViewController: UIViewController {
             preferredStyle: .alert
         )
         
-        alert.view.tintColor = UIColor(red: 50/255, green: 32/255, blue: 117/255, alpha: 1)
+        alert.view.tintColor = UIColor(named: "alert")
         
         alert.addAction(UIAlertAction(
             title: "Yes",
