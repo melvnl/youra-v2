@@ -12,12 +12,10 @@ class historyViewController: UIViewController, UITableViewDelegate, UITableViewD
     struct History {
             let time: String
         }
-    
-//    let histories = ["tralala","trilili","lele"]
 
     let histories = [
-        History(time: "10.00 - 15.00"),
-        History(time: "something"),
+        History(time: "4 Oct 22 , 10.00 - 15.00"),
+        History(time: "5 Oct 22 , 11.00 - 14.00"),
     ]
 
 
@@ -27,10 +25,13 @@ class historyViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         print("history called")
         
+        let nib = UINib(nibName: "historyTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "historyTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
-
-        // Do any additional setup after loading the view.
+        tableView.backgroundColor = .clear
+        tableView.layer.cornerRadius = 10
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,13 +39,14 @@ class historyViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "allCell", for: indexPath)
-//        cell.textLabel?.text = histories[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "historyTableViewCell", for: indexPath) as! historyTableViewCell
         
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "allCell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "allCell")
-//
+        let selectedBg = UIView()
+        selectedBg.backgroundColor = .clear
+        cell.selectedBackgroundView = selectedBg
+        
         let history = histories[indexPath.row]
-        cell.textLabel?.text = history.time
+        cell.myLabel.text = history.time
 
         return cell
     }
