@@ -158,7 +158,8 @@ class WorkSessionViewController: UIViewController {
 		sessionData.workDuration = getWorkDuration()
 
 		AppHelper.initSessionData(sessionData: sessionData)
-//		print(sessionData)
+		print("Work Session")
+		print(AppHelper.getSessionData())
 
     }
 

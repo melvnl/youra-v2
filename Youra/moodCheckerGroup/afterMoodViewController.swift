@@ -12,6 +12,9 @@ class afterMoodViewController: UIViewController {
     @IBOutlet weak var emoji: UIImageView!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var moodLabel: UILabel!
+
+	let context = (UIApplication.self.shared.delegate as! AppDelegate).persistentContainer.viewContext
+	var sliderValue:Float = 0.0
     
     @IBOutlet weak var button: UIButton!
     @IBAction func getSliderValue(_ sender: UISlider) {
@@ -37,6 +40,8 @@ class afterMoodViewController: UIViewController {
             emoji.image = image
             moodLabel.text = "Very Bad"
         }
+
+		sliderValue = currentValue
     }
     
     override func viewDidLoad() {
@@ -68,4 +73,32 @@ class afterMoodViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
+	@IBAction func finishButtonClick(_ sender: Any) {
+		let sessionData = AppHelper.getSessionData()
+		sessionData.moodAfter = sliderValue
+
+		AppHelper.initSessionData(sessionData: sessionData)
+		print("After Mood")
+		print(AppHelper.getSessionData())
+
+		saveSessionData()
+	}
+
+	func saveSessionData() {
+		let newSessionData = AppHelper.getSessionData()
+		do {
+			try self.context.save()
+		} catch {
+
+		}
+		var data:[SessionData] = []
+		do {
+			data = try context.fetch(SessionData.fetchRequest())
+		} catch {
+
+		}
+
+		print("Core Data Value")
+		print(data)
+	}
 }
