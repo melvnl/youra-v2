@@ -13,20 +13,19 @@ class settingViewController: UIViewController, UNUserNotificationCenterDelegate 
     var everyday = false
     var weekday = false
     
+    @IBOutlet weak var usernameLabel: UILabel!
     
-
     @IBAction func toggleEveryday(_ sender: Any) {
-        print("everydat called")
+        print("everyday called")
         everyday = !everyday
                 let content = UNMutableNotificationContent()
-                content.title = "Weekly Staff Meeting"
-                content.body = "Every Tuesday at 2pm"
+                content.title = "You are working today right?"
+                content.body = "We care about your stress! Don't push yourself too hard! - Love, YOURA"
 
                 var dateComponents = DateComponents()
                 dateComponents.calendar = Calendar.current
 
-                dateComponents.hour = 0
-                dateComponents.minute = 20
+                dateComponents.hour = 10
                 // Create the trigger as a repeating event.`
                 let trigger = UNCalendarNotificationTrigger(
                          dateMatching: dateComponents, repeats: true)
@@ -58,15 +57,14 @@ class settingViewController: UIViewController, UNUserNotificationCenterDelegate 
         weekday = !weekday
                 
                 let content = UNMutableNotificationContent()
-                content.title = "Weekly Staff Meeting"
-                content.body = "Every Tuesday at 2pm"
+                content.title = "Don't forget to take a break!"
+                content.body = "You have done a really great job! Take a rest now - Love, YOURA"
                 
                 func triggerFor(day: Int) -> DateComponents {
                     var dateComponents = DateComponents()
                     dateComponents.calendar = Calendar.current
                     dateComponents.weekday = day
                     dateComponents.hour = 10
-                    dateComponents.minute = 33
                     
                     return dateComponents
                    }
@@ -118,7 +116,8 @@ class settingViewController: UIViewController, UNUserNotificationCenterDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        usernameLabel.text = UserDefaultManager.shared.defaults.value(forKey: "username") as? String
         
         print("called")
         

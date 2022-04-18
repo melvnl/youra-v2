@@ -12,17 +12,15 @@ class historyTableViewCell: UITableViewCell {
     @IBOutlet var myLabel: UILabel!
     @IBOutlet var myImageView: UIImageView!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.cornerRadius = 10
-//        self.backgroundColor = .clear
+        self.backgroundColor = .clear
         
-        let cellBg = UIImage(named: "reminderBackground.png")
+        let cellBg = UIImage(named: "historyBtn.png")
         self.backgroundView = UIImageView(image: cellBg)
-        // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

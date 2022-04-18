@@ -15,7 +15,8 @@ class PrivacyPolicyViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		usernameTF.delegate = self
+		    usernameTF.delegate = self
+        overrideUserInterfaceStyle = .light
     }
 
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
