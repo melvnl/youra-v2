@@ -54,7 +54,7 @@
                                     <constraint firstAttribute="height" constant="40" id="4dd-la-Gj3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" textContentType="name"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                                 <connections>
                                     <action selector="usernameChange:" destination="xHW-xT-7TD" eventType="editingChanged" id="8Ve-PL-kaZ"/>
                                 </connections>

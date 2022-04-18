@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PrivacyPolicyViewController: UIViewController {
+class PrivacyPolicyViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var usernameTF: UITextField!
     @IBOutlet weak var usernameErrorLabel: UILabel!
@@ -15,7 +15,12 @@ class PrivacyPolicyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		usernameTF.delegate = self
     }
+
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		return textField.endEditing(false)
+	}
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -67,6 +72,7 @@ class PrivacyPolicyViewController: UIViewController {
     func saveUsername() {
         
     }
+
 
 }
 

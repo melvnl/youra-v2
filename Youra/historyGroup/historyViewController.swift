@@ -42,7 +42,7 @@ class historyViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.selectedBackgroundView = selectedBg
         
         let history = items[indexPath.row]
-		cell.myLabel.text = AppHelper.getStringDateTime(startDate: history.createDate!, endDate:  history.endDate!)
+		cell.myLabel.text = AppHelper.getStringDateTime(startDate: history.createDate!, endDate:  history.endDate ?? Date())
         
         return cell
     }
