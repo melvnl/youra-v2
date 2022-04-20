@@ -35,8 +35,14 @@ class NotesViewController: UIViewController {
 			preferredStyle: .alert
 		)
 
-        alert.view.tintColor = UIColor(red: 50/255, green: 32/255, blue: 117/255, alpha: 1)
-        
+        alert.view.tintColor = UIColor { tc in
+                    switch tc.userInterfaceStyle {
+                    case .dark:
+                        return UIColor(red: 153/255, green: 132/255, blue: 243/255, alpha: 1)
+                    default:
+                        return UIColor(red: 50/255, green: 32/255, blue: 117/255, alpha: 1)
+                    }
+                }
 		alert.addAction(UIAlertAction(
 			title: "Close",
 			style: .cancel,
