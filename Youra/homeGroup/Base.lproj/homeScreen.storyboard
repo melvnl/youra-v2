@@ -580,6 +580,8 @@
                     <navigationItem key="navigationItem" id="KbM-7w-cJd"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="darkBtn" destination="KL3-zr-ARO" id="wbP-CU-Wr6"/>
+                        <outlet property="lightBtn" destination="lzO-ng-7IK" id="0qR-TP-qYJ"/>
                         <outlet property="usernameLabel" destination="hCT-oc-h8g" id="2zR-C5-CJV"/>
                     </connections>
                 </viewController>

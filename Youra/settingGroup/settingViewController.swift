@@ -15,8 +15,10 @@ class settingViewController: UIViewController, UNUserNotificationCenterDelegate 
     
     @IBOutlet weak var usernameLabel: UILabel!
     
+    @IBOutlet weak var lightBtn: UIButton!
+    @IBOutlet weak var darkBtn: UIButton!
+    
     @IBAction func toggleEveryday(_ sender: Any) {
-        print("everyday called")
         everyday = !everyday
                 let content = UNMutableNotificationContent()
                 content.title = "You are working today right?"
@@ -35,14 +37,11 @@ class settingViewController: UIViewController, UNUserNotificationCenterDelegate 
                 let request = UNNotificationRequest(identifier: uuidString,
                             content: content, trigger: trigger)
                 if(everyday){
-                    print("everyday true")
-
             
                     // Schedule the request with the system.
                     UNUserNotificationCenter.current().add(request) { (error) in
                        if error != nil {
                           // Handle any errors.
-                           print("error")
                        }
                     }
             }
@@ -53,7 +52,6 @@ class settingViewController: UIViewController, UNUserNotificationCenterDelegate 
     
     
     @IBAction func toggleOnWeekday(_ sender: Any) {
-        print("weekday called")
         weekday = !weekday
                 
                 let content = UNMutableNotificationContent()
@@ -86,14 +84,11 @@ class settingViewController: UIViewController, UNUserNotificationCenterDelegate 
                         
                         let request = UNNotificationRequest(identifier: uuidString,
                                     content: content, trigger: trigger)
-                       
-                            print("weekday true")
                     
                             // Schedule the request with the system.
                             UNUserNotificationCenter.current().add(request) { (error) in
                                if error != nil {
                                   // Handle any errors.
-                                   print("error")
                                }
                             }
                     }
@@ -114,12 +109,33 @@ class settingViewController: UIViewController, UNUserNotificationCenterDelegate 
         self.view.window?.overrideUserInterfaceStyle = colorUserDefaults.colorshared.theme.getUserInterfaceStyle()
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+           if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
+               // ColorUtils.loadCGColorFromAsset returns cgcolor for color name
+               if (self.traitCollection.userInterfaceStyle == .dark){
+                   darkBtn.layer.borderColor = UIColor(red: 174/255, green: 143/255, blue: 177/255, alpha: 1).cgColor
+                   lightBtn.layer.borderColor = UIColor(red: 174/255, green: 143/255, blue: 177/255, alpha: 0).cgColor
+               }
+               else{
+                   darkBtn.layer.borderColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0).cgColor
+                   lightBtn.layer.borderColor = UIColor(red: 174/255, green: 143/255, blue: 177/255, alpha: 1).cgColor
+               }
+           }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         usernameLabel.text = UserDefaultManager.shared.defaults.value(forKey: "username") as? String
         
-        print("called")
+        darkBtn.layer.borderWidth = 2
+        darkBtn.layer.cornerRadius = 10
+        darkBtn.layer.borderColor = self.traitCollection.userInterfaceStyle == .dark ? UIColor(red: 174/255, green: 143/255, blue: 177/255, alpha: 1).cgColor : UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0).cgColor
+        
+        lightBtn.layer.borderWidth = 2
+        lightBtn.layer.cornerRadius = 10
+        lightBtn.layer.borderColor = self.traitCollection.userInterfaceStyle == .light ? UIColor(red: 174/255, green: 143/255, blue: 177/255, alpha: 1).cgColor  : UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0).cgColor
+        
         
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
