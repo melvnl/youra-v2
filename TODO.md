@@ -1,6 +1,5 @@
 - auto layout
 - mood check screen ny jadiin modal ? 
-- button play pause besarin (minimal 44x44)
 - button rest and work session 
 - di dark mode history + notes button “back” dan “info” jdiin putih aja
 - notes ada kayak garis | utk tandain bisa nulis dimana, boleh ditambah?
