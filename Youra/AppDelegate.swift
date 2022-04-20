@@ -15,7 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        UINavigationBar.appearance().tintColor = UIColor(red: 66/255, green: 78/255, blue: 116/255, alpha: 1)
+        UINavigationBar.appearance().tintColor = UIColor { tc in
+            switch tc.userInterfaceStyle {
+            case .dark:
+                return UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+            default:
+                return UIColor(red: 66/255, green: 78/255, blue: 116/255, alpha: 1)
+            }
+        }
         
         return true
     }
