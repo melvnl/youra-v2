@@ -30,9 +30,7 @@ class RestSessionViewController: UIViewController {
     var quotesRandNumber: Int = 0
     var musicRandNumber: Int = 0
     var isPaused = false
-    var restDuration: TimeInterval? = 0
-    
-    var sessionDuration = Int((UserDefaultManager.shared.defaults.value(forKey: "restSession") as? TimeInterval) ?? 0 )
+    var restDuration = Int((UserDefaultManager.shared.defaults.value(forKey: "restSession") as? TimeInterval) ?? 0 )
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,16 +39,15 @@ class RestSessionViewController: UIViewController {
         backgrounds = BackgroundSeeder().generateData()
         quotes = BackgroundSeeder().generateQuotes()
         musics = MusicSeeder().generateData()
-        restDuration = UserDefaultManager.shared.defaults.value(forKey: "restSession") as? TimeInterval
         
         // Set View
         randomizeNumber()
         
-        let hours = sessionDuration / 3600
-        let mins = sessionDuration % 3600 / 60
-        let secs = sessionDuration % 60
+        let hours = restDuration / 3600
+        let mins = restDuration % 3600 / 60
+        let secs = restDuration % 60
         
-        restTimerLabel.text = "\(restDuration ?? 0)"
+        restTimerLabel.text = "\(restDuration)"
         if(hours > 0){
             print("dari set view")
             print(hours)
@@ -111,26 +108,23 @@ class RestSessionViewController: UIViewController {
         view.layer.addSublayer(foregroundLayer)
         
         playAnimation()
-		_ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerCount), userInfo: nil, repeats: true)
+        _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerCount), userInfo: nil, repeats: true)
         
         playSong()
         song.play()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     @IBAction func noteButtonPressed(_ sender: Any) {
-        
         
     }
     
@@ -183,7 +177,7 @@ class RestSessionViewController: UIViewController {
         
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         basicAnimation.toValue = 1
-        basicAnimation.duration = restDuration ?? 0
+        basicAnimation.duration = (Double(restDuration)) + 0.9
         basicAnimation.fillMode = CAMediaTimingFillMode.forwards
         basicAnimation.isRemovedOnCompletion = false
         foregroundLayer.add(basicAnimation, forKey: "basicAnimation")
@@ -191,12 +185,12 @@ class RestSessionViewController: UIViewController {
     
     @objc func timerCount() {
         
-        let hours = sessionDuration / 3600
-        let mins = sessionDuration % 3600 / 60
-        let secs = sessionDuration % 60
-         
-        if sessionDuration > 0 {
-            sessionDuration -= 1
+        let hours = restDuration / 3600
+        let mins = restDuration % 3600 / 60
+        let secs = restDuration % 60
+        
+        if restDuration > -2 {
+            restDuration -= 1
             
             if(hours > 0){
                 restTimerLabel.text = String(hours) + ":" + (mins >= 10 ? String(mins): ("0" + String(mins)) ) + ":" + (secs == 0 ? "00":String(secs))
@@ -204,25 +198,38 @@ class RestSessionViewController: UIViewController {
             else{
                 restTimerLabel.text = String(mins) + ":" + (secs < 10 ? "0" : "") + String(secs)
             }
+        }
+        
+        if restDuration == -1 {
             
-            }
-     }
+            let sessionData = AppHelper.getSessionData()
+            sessionData.restDuration = getWorkDuration()
+            
+            AppHelper.initSessionData(sessionData: sessionData)
+            print("Rest Session")
+            print(AppHelper.getSessionData())
+            
+            self.performSegue(withIdentifier: "restMoodSegue", sender: nil)
+            
+            song.stop()
+        }
+    }
     
     @IBAction func endSessionTapped(_ sender: Any) {
+        
         showAlert()
-
-		let sessionData = AppHelper.getSessionData()
-		sessionData.restDuration = getWorkDuration()
-
-		AppHelper.initSessionData(sessionData: sessionData)
-		print("Rest Session")
-		print(AppHelper.getSessionData())
-
+        
+        let sessionData = AppHelper.getSessionData()
+        sessionData.restDuration = getWorkDuration()
+        
+        AppHelper.initSessionData(sessionData: sessionData)
+        print("Rest Session")
+        print(AppHelper.getSessionData())
     }
-
-	func getWorkDuration() -> Double {
-		return Double(UserDefaultManager.shared.defaults.value(forKey: "restSession") as! Int - sessionDuration)
-	}
+    
+    func getWorkDuration() -> Double {
+        return Double(UserDefaultManager.shared.defaults.value(forKey: "restSession") as! Int - restDuration)
+    }
     
     func showAlert() {
         
@@ -238,26 +245,8 @@ class RestSessionViewController: UIViewController {
             title: "Yes",
             style: .default,
             handler: { action in
-                
-                self.randomizeNumber()
-                
-                self.imageBackground.image = self.backgrounds[self.randNumber].bgTitle
-                self.circularView.backgroundColor = self.backgrounds[self.randNumber].circularViewColor
-                self.backgroundLayer.strokeColor = self.backgrounds[self.randNumber].backgroundLayerColor.cgColor
-                self.foregroundLayer.strokeColor = self.backgrounds[self.randNumber].foregroundLayerColor.cgColor
-                self.restTimerLabel.textColor = self.backgrounds[self.randNumber].timerLabelColor
-                self.quotesLabel.text = self.quotes[self.quotesRandNumber].quote
-                self.pauseButton.tintColor = self.backgrounds[self.randNumber].pauseButtonColor
-                self.noteButton.tintColor = self.backgrounds[self.randNumber].noteIconColor
-                self.noteBGButton.backgroundColor = self.backgrounds[self.randNumber].noteButtonBGColor
-                self.playAnimation()
-                self.playSong()
+
                 self.performSegue(withIdentifier: "restMoodSegue", sender: nil)
-//                self.song.play()
-                
-//                let storyBoard : UIStoryboard = UIStoryboard(name: "homeScreen", bundle:nil)
-//                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "moodView") as! beforeMoodViewController
-//                self.present(nextViewController, animated:true, completion:nil)
             })
         )
         
@@ -270,5 +259,5 @@ class RestSessionViewController: UIViewController {
         
         present(alert, animated: true)
     }
-	
+    
 }

@@ -23,9 +23,7 @@ class WorkSessionViewController: UIViewController {
     let backgroundLayer = CAShapeLayer()
     var randNumber: Int = 0
     var quotesRandNumber: Int = 0
-    var workDuration: TimeInterval? = 0
-    
-    var sessionDuration = Int((UserDefaultManager.shared.defaults.value(forKey: "workSession") as? TimeInterval) ?? 0 )
+    var workDuration = Int((UserDefaultManager.shared.defaults.value(forKey: "workSession") as? TimeInterval) ?? 0 )
     
     
     override func viewDidLoad() {
@@ -34,16 +32,15 @@ class WorkSessionViewController: UIViewController {
         // Generate Data
         backgrounds = BackgroundSeeder().generateData()
         quotes = BackgroundSeeder().generateQuotes()
-        workDuration = UserDefaultManager.shared.defaults.value(forKey: "workSession") as? TimeInterval
         
         // Set View
         randomizeNumber()
         
-        let hours = sessionDuration / 3600
-        let mins = sessionDuration % 3600 / 60
-        let secs = sessionDuration % 60
+        let hours = workDuration / 3600
+        let mins = workDuration % 3600 / 60
+        let secs = workDuration % 60
         
-        timerLabel.text = "\(workDuration ?? 0)"
+        timerLabel.text = "\(workDuration)"
         if(hours > 0){
             print("dari set view")
             print(hours)
@@ -98,25 +95,21 @@ class WorkSessionViewController: UIViewController {
         view.layer.addSublayer(foregroundLayer)
         
         playAnimation()
-        
-        //set work label timer
-        
-		_ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerCount), userInfo: nil, repeats: true)
-
+        _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerCount), userInfo: nil, repeats: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     func randomizeNumber() {
-
+        
         randNumber = Int(arc4random_uniform(6))
         quotesRandNumber = Int(arc4random_uniform(6))
     }
@@ -125,47 +118,56 @@ class WorkSessionViewController: UIViewController {
         
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         basicAnimation.toValue = 1
-        basicAnimation.duration = workDuration ?? 0
+        basicAnimation.duration = Double(workDuration) + 0.9
         basicAnimation.fillMode = CAMediaTimingFillMode.forwards
         basicAnimation.isRemovedOnCompletion = false
         foregroundLayer.add(basicAnimation, forKey: "basicAnimation")
     }
     
-   @objc func timerCount() {
-       
-       let hours = sessionDuration / 3600
-       let mins = sessionDuration % 3600 / 60
-       let secs = sessionDuration % 60
-
-
+    @objc func timerCount() {
         
-       if sessionDuration > 0 {
-           sessionDuration -= 1
-           
-           if(hours > 0){
-               timerLabel.text = String(hours) + ":" + (mins >= 10 ? String(mins): ("0" + String(mins)) ) + ":" + (secs == 0 ? "00":String(secs))
-           }
-           else{
-               timerLabel.text = String(mins) + ":" + (secs < 10 ? "0" : "") + String(secs)
-           }
-           
-           }
+        let hours = workDuration / 3600
+        let mins = workDuration % 3600 / 60
+        let secs = workDuration % 60
+        
+        if workDuration > -2 {
+            workDuration -= 1
+            
+            if hours > 0 {
+                timerLabel.text = String(hours) + ":" + (mins >= 10 ? String(mins): ("0" + String(mins)) ) + ":" + (secs == 0 ? "00":String(secs))
+            } else {
+                timerLabel.text = String(mins) + ":" + (secs < 10 ? "0" : "") + String(secs)
+            }
+            
+            if workDuration == -1 {
+                
+                let sessionData = AppHelper.getSessionData()
+                sessionData.workDuration = getWorkDuration()
+                
+                AppHelper.initSessionData(sessionData: sessionData)
+                print("Work Session")
+                print(AppHelper.getSessionData())
+                
+                self.performSegue(withIdentifier: "workMoodSegue", sender: nil)
+            }
+        }
     }
     
     @IBAction func endSessionTapped(_ sender: Any) {
+        
         showAlert()
-		let sessionData = AppHelper.getSessionData()
-		sessionData.workDuration = getWorkDuration()
-
-		AppHelper.initSessionData(sessionData: sessionData)
-		print("Work Session")
-		print(AppHelper.getSessionData())
-
+        
+        let sessionData = AppHelper.getSessionData()
+        sessionData.workDuration = getWorkDuration()
+        
+        AppHelper.initSessionData(sessionData: sessionData)
+        print("Work Session")
+        print(AppHelper.getSessionData())
     }
-
-	func getWorkDuration() -> Double {
-		return Double(UserDefaultManager.shared.defaults.value(forKey: "workSession") as! Int - sessionDuration)
-	}
+    
+    func getWorkDuration() -> Double {
+        return Double(UserDefaultManager.shared.defaults.value(forKey: "workSession") as! Int - workDuration)
+    }
     
     func showAlert() {
         
@@ -182,21 +184,7 @@ class WorkSessionViewController: UIViewController {
             style: .default,
             handler: { action in
                 
-                self.randomizeNumber()
-                
-                self.imageBackground.image = self.backgrounds[self.randNumber].bgTitle
-                self.circularView.backgroundColor = self.backgrounds[self.randNumber].circularViewColor
-                self.backgroundLayer.strokeColor = self.backgrounds[self.randNumber].backgroundLayerColor.cgColor
-                self.foregroundLayer.strokeColor = self.backgrounds[self.randNumber].foregroundLayerColor.cgColor
-                self.timerLabel.textColor = self.backgrounds[self.randNumber].timerLabelColor
-                self.quotesLabel.text = self.quotes[self.quotesRandNumber].quote
-                self.playAnimation()
-                
                 self.performSegue(withIdentifier: "workMoodSegue", sender: nil)
-                
-//                let storyBoard : UIStoryboard = UIStoryboard(name: "sessionScreen", bundle:nil)
-//                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "restView") as! RestSessionViewController
-//                self.present(nextViewController, animated:true, completion:nil)
             })
         )
         
