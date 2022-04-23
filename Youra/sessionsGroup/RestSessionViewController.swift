@@ -247,6 +247,7 @@ class RestSessionViewController: UIViewController {
             handler: { action in
 
                 self.performSegue(withIdentifier: "restMoodSegue", sender: nil)
+                self.song.stop()
             })
         )
         

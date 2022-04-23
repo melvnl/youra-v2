@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NotesViewController: UIViewController {
+class NotesViewController: UIViewController, UITextFieldDelegate {
 
 
 	@IBOutlet weak var notesTitle: UITextField!
@@ -18,6 +18,9 @@ class NotesViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
         
+        notesTitle.delegate = self
+        notesTitle.tag = 0 //Increment accordingly
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(showInfo))
 
         // Do any additional setup after loading the view.
@@ -26,6 +29,19 @@ class NotesViewController: UIViewController {
 		notesBody.text = sessionData.noteBody
 
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+          // Try to find next responder
+        if textField == notesTitle {
+               textField.resignFirstResponder()
+               notesBody.becomeFirstResponder()
+            } else {
+             // Not found, so remove keyboard.
+             textField.resignFirstResponder()
+          }
+          // Do not add a line break
+          return false
+       }
 
 	@objc
 	func showInfo() {
