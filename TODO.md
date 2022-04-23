@@ -1,5 +1,2 @@
 - auto layout
-- mood check screen ny jadiin modal ? 
-- button rest and work session 
-- notes ada kayak garis | utk tandain bisa nulis dimana, boleh ditambah?
-- splash screen mmg blum ada ya?
+- mood check screen ny jadiin modal ?
