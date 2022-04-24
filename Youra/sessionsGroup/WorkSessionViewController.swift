@@ -25,6 +25,8 @@ class WorkSessionViewController: UIViewController {
     var quotesRandNumber: Int = 0
     var workDuration = Int((UserDefaultManager.shared.defaults.value(forKey: "workSession") as? TimeInterval) ?? 0 )
     
+    var timer: Timer!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,7 +97,7 @@ class WorkSessionViewController: UIViewController {
         view.layer.addSublayer(foregroundLayer)
         
         playAnimation()
-        _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerCount), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerCount), userInfo: nil, repeats: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -130,7 +132,7 @@ class WorkSessionViewController: UIViewController {
         let mins = workDuration % 3600 / 60
         let secs = workDuration % 60
         
-        if workDuration > -2 {
+        if workDuration > 0 {
             workDuration -= 1
             
             if hours > 0 {
@@ -138,18 +140,17 @@ class WorkSessionViewController: UIViewController {
             } else {
                 timerLabel.text = String(mins) + ":" + (secs < 10 ? "0" : "") + String(secs)
             }
+        }
+        else  {
+            timer.invalidate()
+            let sessionData = AppHelper.getSessionData()
+            sessionData.workDuration = getWorkDuration()
             
-            if workDuration == -1 {
-                
-                let sessionData = AppHelper.getSessionData()
-                sessionData.workDuration = getWorkDuration()
-                
-                AppHelper.initSessionData(sessionData: sessionData)
-                print("Work Session")
-                print(AppHelper.getSessionData())
-                
-                self.performSegue(withIdentifier: "workMoodSegue", sender: nil)
-            }
+            AppHelper.initSessionData(sessionData: sessionData)
+            print("Work Session")
+            print(AppHelper.getSessionData())
+            
+            self.performSegue(withIdentifier: "workMoodSegue", sender: nil)
         }
     }
     
@@ -185,6 +186,7 @@ class WorkSessionViewController: UIViewController {
             handler: { action in
                 
                 self.performSegue(withIdentifier: "workMoodSegue", sender: nil)
+                self.timer.invalidate()
             })
         )
         

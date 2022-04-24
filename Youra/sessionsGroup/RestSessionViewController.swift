@@ -32,6 +32,8 @@ class RestSessionViewController: UIViewController {
     var isPaused = false
     var restDuration = Int((UserDefaultManager.shared.defaults.value(forKey: "restSession") as? TimeInterval) ?? 0 )
     
+    var timer: Timer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +44,8 @@ class RestSessionViewController: UIViewController {
         
         // Set View
         randomizeNumber()
+        
+        print(restDuration)
         
         let hours = restDuration / 3600
         let mins = restDuration % 3600 / 60
@@ -54,6 +58,7 @@ class RestSessionViewController: UIViewController {
             restTimerLabel.text = String(hours) + ":" + (mins >= 10 ? String(mins): ("0" + String(mins)) ) + ":" + (secs == 0 ? "00":String(secs))
         }
         else{
+            print(restDuration)
             restTimerLabel.text = String(mins) + ":" + (secs < 10 ? "0" : "") + String(secs)
         }
         restTimerLabel.textColor = backgrounds[randNumber].timerLabelColor
@@ -108,7 +113,9 @@ class RestSessionViewController: UIViewController {
         view.layer.addSublayer(foregroundLayer)
         
         playAnimation()
-        _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerCount), userInfo: nil, repeats: true)
+        
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerCount), userInfo: nil, repeats: true)
         
         playSong()
         song.play()
@@ -189,29 +196,28 @@ class RestSessionViewController: UIViewController {
         let mins = restDuration % 3600 / 60
         let secs = restDuration % 60
         
-        if restDuration > -2 {
+        if restDuration > 0 {
             restDuration -= 1
             
             if(hours > 0){
                 restTimerLabel.text = String(hours) + ":" + (mins >= 10 ? String(mins): ("0" + String(mins)) ) + ":" + (secs == 0 ? "00":String(secs))
             }
             else{
+                print(restDuration)
                 restTimerLabel.text = String(mins) + ":" + (secs < 10 ? "0" : "") + String(secs)
             }
         }
         
-        if restDuration == -1 {
-            
+        else {
+            timer.invalidate()
             let sessionData = AppHelper.getSessionData()
             sessionData.restDuration = getWorkDuration()
             
             AppHelper.initSessionData(sessionData: sessionData)
             print("Rest Session")
             print(AppHelper.getSessionData())
-            
+            self.song.stop()
             self.performSegue(withIdentifier: "restMoodSegue", sender: nil)
-            
-            song.stop()
         }
     }
     
@@ -245,9 +251,9 @@ class RestSessionViewController: UIViewController {
             title: "Yes",
             style: .default,
             handler: { action in
-
-                self.performSegue(withIdentifier: "restMoodSegue", sender: nil)
                 self.song.stop()
+                self.timer.invalidate()
+                self.performSegue(withIdentifier: "restMoodSegue", sender: nil)
             })
         )
         
