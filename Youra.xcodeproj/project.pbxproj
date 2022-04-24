@@ -17,6 +17,8 @@
 		68C05B132806CC710023484D /* SessionData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C05B112806CC710023484D /* SessionData+CoreDataProperties.swift */; };
 		B02B087D28069A1F0047545D /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B087C28069A1F0047545D /* detailViewController.swift */; };
 		B088AB262801A597007CFCF6 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B088AB252801A597007CFCF6 /* settingViewController.swift */; };
+		B0D1927928153B810049B8FB /* Bugsnag in Frameworks */ = {isa = PBXBuildFile; productRef = B0D1927828153B810049B8FB /* Bugsnag */; };
+		B0D1927B28153B810049B8FB /* BugsnagNetworkRequestPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = B0D1927A28153B810049B8FB /* BugsnagNetworkRequestPlugin */; };
 		B0D2C22A2801DE1300C2DDD7 /* historyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D2C2292801DE1300C2DDD7 /* historyViewController.swift */; };
 		B0EACB0B2803D82500049098 /* beforeMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EACB0A2803D82500049098 /* beforeMoodViewController.swift */; };
 		B5A06AF22806C31800C6F6E4 /* colorUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06AF12806C31800C6F6E4 /* colorUserDefaults.swift */; };
@@ -95,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0D1927B28153B810049B8FB /* BugsnagNetworkRequestPlugin in Frameworks */,
+				B0D1927928153B810049B8FB /* Bugsnag in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +247,10 @@
 			dependencies = (
 			);
 			name = Youra;
+			packageProductDependencies = (
+				B0D1927828153B810049B8FB /* Bugsnag */,
+				B0D1927A28153B810049B8FB /* BugsnagNetworkRequestPlugin */,
+			);
 			productName = Youra;
 			productReference = DB9DC3C627FABAA9002F048D /* Youra.app */;
 			productType = "com.apple.product-type.application";
@@ -271,6 +279,9 @@
 				Base,
 			);
 			mainGroup = DB9DC3BD27FABAA9002F048D;
+			packageReferences = (
+				B0D1927728153B810049B8FB /* XCRemoteSwiftPackageReference "bugsnag-cocoa" */,
+			);
 			productRefGroup = DB9DC3C727FABAA9002F048D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -556,6 +567,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B0D1927728153B810049B8FB /* XCRemoteSwiftPackageReference "bugsnag-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bugsnag/bugsnag-cocoa";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B0D1927828153B810049B8FB /* Bugsnag */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B0D1927728153B810049B8FB /* XCRemoteSwiftPackageReference "bugsnag-cocoa" */;
+			productName = Bugsnag;
+		};
+		B0D1927A28153B810049B8FB /* BugsnagNetworkRequestPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B0D1927728153B810049B8FB /* XCRemoteSwiftPackageReference "bugsnag-cocoa" */;
+			productName = BugsnagNetworkRequestPlugin;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		6843620A2805B6E600EED0CA /* YouraData.xcdatamodeld */ = {

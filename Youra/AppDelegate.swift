@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import Bugsnag
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return UIColor(red: 66/255, green: 78/255, blue: 116/255, alpha: 1)
             }
         }
+        
+        //start error monitoring bugsnag
+        Bugsnag.start()
         
         return true
     }
