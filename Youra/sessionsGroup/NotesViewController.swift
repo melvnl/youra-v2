@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NotesViewController: UIViewController, UITextFieldDelegate {
+class NotesViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
 
 	@IBOutlet weak var notesTitle: UITextField!
@@ -20,6 +20,8 @@ class NotesViewController: UIViewController, UITextFieldDelegate {
         
         notesTitle.delegate = self
         notesTitle.tag = 0 //Increment accordingly
+        
+        configureTextFieldObservers()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(showInfo))
 
@@ -86,5 +88,14 @@ class NotesViewController: UIViewController, UITextFieldDelegate {
 		print(AppHelper.getSessionData())
 	}
 
-
+    @objc func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        notesTitle.resignFirstResponder()
+        notesBody.resignFirstResponder()
+    }
+    
+    func configureTextFieldObservers() {
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard(_:)))
+        view.addGestureRecognizer(tap)
+    }
 }

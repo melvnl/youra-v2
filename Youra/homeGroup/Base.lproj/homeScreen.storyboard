@@ -70,7 +70,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dKc-0p-EYy" firstAttribute="leading" secondItem="uzq-eH-vNF" secondAttribute="leading" constant="14" id="4Uq-VO-grP"/>
-                            <constraint firstItem="mgT-Oj-7Xy" firstAttribute="top" secondItem="uzq-eH-vNF" secondAttribute="top" constant="46" id="840-cY-SDi"/>
+                            <constraint firstItem="mgT-Oj-7Xy" firstAttribute="top" secondItem="BLr-F5-B6G" secondAttribute="top" constant="90" id="840-cY-SDi"/>
                             <constraint firstItem="ziS-mb-wXd" firstAttribute="leading" secondItem="uzq-eH-vNF" secondAttribute="leading" constant="20" id="89B-KB-39M"/>
                             <constraint firstItem="Pfk-9n-DGV" firstAttribute="leading" secondItem="uzq-eH-vNF" secondAttribute="leading" id="EC7-oZ-k0f"/>
                             <constraint firstItem="Gyf-2G-aeq" firstAttribute="top" secondItem="BLr-F5-B6G" secondAttribute="top" id="Fzh-Nm-Fej"/>
@@ -111,7 +111,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeScreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="SO0-e5-5V8">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headerHomeScreen" translatesAutoresizingMaskIntoConstraints="NO" id="24A-8e-QSZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header-bg-light" translatesAutoresizingMaskIntoConstraints="NO" id="24A-8e-QSZ">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="270"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="270" id="GKg-qt-LA2"/>
@@ -386,7 +386,7 @@
                             <constraint firstItem="Z1R-Dx-Frf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="115" id="7s6-D8-xDV"/>
                             <constraint firstItem="nPn-uX-g94" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ADG-vj-UVe"/>
                             <constraint firstItem="drE-9P-8nP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AmE-Vf-A8l"/>
-                            <constraint firstItem="nPn-uX-g94" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-44" id="BBV-Hh-OV1"/>
+                            <constraint firstItem="nPn-uX-g94" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BBV-Hh-OV1"/>
                             <constraint firstItem="HRg-YQ-AJ0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="BDW-8u-57R"/>
                             <constraint firstItem="dZp-Zw-9om" firstAttribute="trailing" secondItem="kak-3b-wVH" secondAttribute="leading" constant="-9" id="DSb-CO-Pk5"/>
                             <constraint firstItem="drE-9P-8nP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="HAF-sz-kau"/>
@@ -463,7 +463,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me on weekdays" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ac8-Bc-ZcG">
-                                <rect key="frame" x="20" y="654" width="188.33333333333334" height="20.333333333333371"/>
+                                <rect key="frame" x="20" y="657" width="188.33333333333334" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -560,7 +560,7 @@
                         <constraints>
                             <constraint firstItem="Cv0-gp-yEe" firstAttribute="top" secondItem="LxO-F5-JUW" secondAttribute="bottom" constant="29.670000000000002" id="1Zc-bC-GnE"/>
                             <constraint firstItem="LxO-F5-JUW" firstAttribute="leading" secondItem="CN6-MD-f6M" secondAttribute="leading" constant="20" id="1r7-uE-Of0"/>
-                            <constraint firstItem="ac8-Bc-ZcG" firstAttribute="top" secondItem="mPa-2U-ztM" secondAttribute="bottom" constant="14" id="2se-Qo-DXG"/>
+                            <constraint firstItem="ac8-Bc-ZcG" firstAttribute="top" secondItem="mPa-2U-ztM" secondAttribute="bottom" constant="17" id="2se-Qo-DXG"/>
                             <constraint firstItem="cEz-p2-FGj" firstAttribute="leading" secondItem="CjS-bf-i6e" secondAttribute="leadingMargin" id="4rC-SB-EC0"/>
                             <constraint firstItem="jdb-iq-a9E" firstAttribute="leading" secondItem="CN6-MD-f6M" secondAttribute="leading" id="533-Ko-N9Z"/>
                             <constraint firstItem="RK4-be-OGc" firstAttribute="leading" secondItem="CN6-MD-f6M" secondAttribute="leading" constant="20" id="6EH-W0-o4s"/>
@@ -588,7 +588,7 @@
                             <constraint firstAttribute="bottom" secondItem="gby-Sr-BtG" secondAttribute="bottom" id="dqC-2A-XhC"/>
                             <constraint firstItem="CN6-MD-f6M" firstAttribute="trailing" secondItem="m2F-Nc-I9q" secondAttribute="trailing" constant="20" id="eYp-mx-4Nv"/>
                             <constraint firstItem="iU3-kC-hZJ" firstAttribute="top" secondItem="ZUP-z7-f6K" secondAttribute="bottom" constant="71.670000000000002" id="gWV-dT-UL5"/>
-                            <constraint firstItem="jdb-iq-a9E" firstAttribute="top" secondItem="CN6-MD-f6M" secondAttribute="top" constant="-44" id="gxz-ol-mY3"/>
+                            <constraint firstItem="jdb-iq-a9E" firstAttribute="top" secondItem="CjS-bf-i6e" secondAttribute="top" id="gxz-ol-mY3"/>
                             <constraint firstItem="RK4-be-OGc" firstAttribute="top" secondItem="CN6-MD-f6M" secondAttribute="top" constant="46" id="hRx-A8-eKy"/>
                             <constraint firstItem="hCT-oc-h8g" firstAttribute="top" secondItem="C1D-C1-YNR" secondAttribute="bottom" constant="15" id="lbu-P5-5bY"/>
                             <constraint firstItem="gby-Sr-BtG" firstAttribute="leading" secondItem="CN6-MD-f6M" secondAttribute="leading" id="qX3-we-PZj"/>
@@ -615,7 +615,6 @@
         <!--History-->
         <scene sceneID="4y9-8R-S8f">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dCn-5p-1K1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController wantsFullScreenLayout="YES" automaticallyAdjustsScrollViewInsets="NO" id="F29-h8-XV5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="History" image="note.text" catalog="system" id="CvJ-vS-3Ma"/>
                     <toolbarItems/>
@@ -628,6 +627,7 @@
                         <segue destination="Of4-8J-EpB" kind="relationship" relationship="rootViewController" id="i2A-xa-Xji"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dCn-5p-1K1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-274" y="-936"/>
         </scene>
@@ -641,7 +641,6 @@
         <image name="emoji 4" width="80" height="80"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="header-bg-light" width="390" height="270"/>
-        <image name="headerHomeScreen" width="390" height="265"/>
         <image name="headphones" catalog="system" width="128" height="121"/>
         <image name="homeScreenBackground" width="390" height="844"/>
         <image name="lightModeButton" width="173" height="135"/>
