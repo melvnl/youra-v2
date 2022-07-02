@@ -15,8 +15,10 @@ class PrivacyPolicyViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		    usernameTF.delegate = self
+        usernameTF.delegate = self
         overrideUserInterfaceStyle = .light
+        
+        configureTextFieldObservers()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -78,18 +80,28 @@ class PrivacyPolicyViewController: UIViewController, UITextFieldDelegate {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             
             let keyboardHeight = keyboardFrame.cgRectValue.height
-            let bottomSpacing = self.view.frame.height - (btnNext.frame.origin.y + btnNext.frame.height)
-            self.view.frame.origin.y -= keyboardHeight - bottomSpacing + 50
+            let bottomSpacing = view.frame.height - (usernameTF.frame.origin.y + usernameTF.frame.height)
+            view.frame.origin.y -= keyboardHeight - bottomSpacing + 50
         }
     }
     
     @objc func keyboardWillHide() {
-        self.view.frame.origin.y = 0
+        view.frame.origin.y = 0
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        usernameTF.resignFirstResponder()
+    }
+    
+    func configureTextFieldObservers() {
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard(_:)))
+        view.addGestureRecognizer(tap)
     }
 }
 
