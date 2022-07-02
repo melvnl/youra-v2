@@ -64,7 +64,7 @@ class WorkSessionViewController: UIViewController {
         endSessionButton.layer.shadowRadius = 5
         endSessionButton.layer.shadowOpacity = 0.2
         
-        circularView.layer.cornerRadius = circularView.frame.size.width/2
+        circularView.layer.cornerRadius = circularView.frame.size.height / 2
         circularView.clipsToBounds = true
         circularView.backgroundColor = backgrounds[randNumber].circularViewColor
         
@@ -73,7 +73,7 @@ class WorkSessionViewController: UIViewController {
         
         let circularPath = UIBezierPath(
             arcCenter: center,
-            radius: 160,
+            radius: (circularView.frame.size.height / 2) + 20,
             startAngle: -CGFloat.pi / 2,
             endAngle: (-CGFloat.pi / 2) + 2 * CGFloat.pi,
             clockwise: true)

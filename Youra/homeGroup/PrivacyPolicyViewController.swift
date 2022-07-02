@@ -17,6 +17,9 @@ class PrivacyPolicyViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 		    usernameTF.delegate = self
         overrideUserInterfaceStyle = .light
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -70,10 +73,23 @@ class PrivacyPolicyViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-    func saveUsername() {
+    @objc func keyboardWillShow(notification: NSNotification) {
         
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            
+            let keyboardHeight = keyboardFrame.cgRectValue.height
+            let bottomSpacing = self.view.frame.height - (btnNext.frame.origin.y + btnNext.frame.height)
+            self.view.frame.origin.y -= keyboardHeight - bottomSpacing + 50
+        }
     }
-
-
+    
+    @objc func keyboardWillHide() {
+        self.view.frame.origin.y = 0
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
 }
 
