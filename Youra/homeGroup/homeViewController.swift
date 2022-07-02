@@ -12,6 +12,9 @@ class homeViewController: UIViewController {
     @IBOutlet weak var workLabel: UILabel!
     @IBOutlet weak var restLabel: UILabel!
     
+    @IBOutlet weak var workMin: UIButton!
+    @IBOutlet weak var restMin: UIButton!
+    
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var goodLabel: UILabel!
     
@@ -22,7 +25,8 @@ class homeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Home Screen Loaded")
+        
+        configureMinButton()
         
         let date = Date()
         let hour = (Calendar.current.component(.hour, from: date))
@@ -44,6 +48,15 @@ class homeViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.funcName), name: NSNotification.Name(rawValue: "pickerClosed"), object: nil)
         
         updateLabel()
+    }
+    
+    func configureMinButton(){
+        
+        let attributedTitle = NSMutableAttributedString(string: "min", attributes: [.foregroundColor: UIColor(named: "durationLabel")!, .font: UIFont.systemFont(ofSize: 27), .underlineStyle: NSUnderlineStyle.single.rawValue])
+        
+        workMin.setAttributedTitle(attributedTitle, for: .normal)
+        
+        restMin.setAttributedTitle(attributedTitle, for: .normal)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
