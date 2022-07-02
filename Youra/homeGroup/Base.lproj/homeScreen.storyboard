@@ -421,8 +421,10 @@
                     <connections>
                         <outlet property="goodLabel" destination="sv2-M7-8k6" id="NvM-Ir-qcR"/>
                         <outlet property="restLabel" destination="ah3-3H-5hi" id="W3P-eW-vsY"/>
+                        <outlet property="restMin" destination="r2T-CE-Wg4" id="sNQ-pJ-612"/>
                         <outlet property="usernameLabel" destination="Iby-tV-Vq8" id="Mm4-bQ-aPT"/>
                         <outlet property="workLabel" destination="dZp-Zw-9om" id="JrU-LP-Ayx"/>
+                        <outlet property="workMin" destination="kak-3b-wVH" id="Kbg-5v-GqA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
