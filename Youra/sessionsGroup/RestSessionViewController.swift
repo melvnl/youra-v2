@@ -76,6 +76,8 @@ class RestSessionViewController: UIViewController {
         endRestSessionButton.layer.shadowRadius = 5
         endRestSessionButton.layer.shadowOpacity = 0.2
         
+        circularView.frame.size.width = view.frame.width - 110
+        circularView.frame.size.height = view.frame.width - 110
         circularView.layer.cornerRadius = circularView.frame.size.width/2
         circularView.clipsToBounds = true
         circularView.backgroundColor = backgrounds[randNumber].circularViewColor
@@ -89,7 +91,7 @@ class RestSessionViewController: UIViewController {
         
         let circularPath = UIBezierPath(
             arcCenter: center,
-            radius: 160,
+            radius: (circularView.frame.size.height / 2) + 20,
             startAngle: -CGFloat.pi / 2,
             endAngle: (-CGFloat.pi / 2) + 2 * CGFloat.pi,
             clockwise: true)

@@ -29,6 +29,10 @@ class WorkSessionViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
+        print(circularView.frame.height)
+        print(circularView.frame.width)
+        
         super.viewDidLoad()
         
         // Generate Data
@@ -64,7 +68,9 @@ class WorkSessionViewController: UIViewController {
         endSessionButton.layer.shadowRadius = 5
         endSessionButton.layer.shadowOpacity = 0.2
         
-        circularView.layer.cornerRadius = circularView.frame.size.height / 2
+        circularView.frame.size.width = view.frame.width - 110
+        circularView.frame.size.height = view.frame.width - 110
+        circularView.layer.cornerRadius = circularView.frame.width / 2
         circularView.clipsToBounds = true
         circularView.backgroundColor = backgrounds[randNumber].circularViewColor
         
