@@ -13,8 +13,6 @@ class settingViewController: UIViewController, UNUserNotificationCenterDelegate 
     var everyday = false
     var weekday = false
     
-    @IBOutlet weak var usernameLabel: UILabel!
-    
     @IBOutlet weak var lightBtn: UIButton!
     @IBOutlet weak var darkBtn: UIButton!
     
@@ -125,9 +123,7 @@ class settingViewController: UIViewController, UNUserNotificationCenterDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        usernameLabel.text = UserDefaultManager.shared.defaults.value(forKey: "username") as? String
-        
+                
         darkBtn.layer.borderWidth = 2
         darkBtn.layer.cornerRadius = 10
         darkBtn.layer.borderColor = self.traitCollection.userInterfaceStyle == .dark ? UIColor(red: 174/255, green: 143/255, blue: 177/255, alpha: 1).cgColor : UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0).cgColor
