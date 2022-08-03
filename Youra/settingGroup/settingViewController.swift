@@ -98,13 +98,30 @@ class settingViewController: UIViewController, UNUserNotificationCenterDelegate 
     
     @IBAction func lightModePressed(_ sender: Any) {
         colorUserDefaults.colorshared.theme = .light
-        self.view.window?.overrideUserInterfaceStyle = colorUserDefaults.colorshared.theme.getUserInterfaceStyle()
+        
+        UIView.transition(
+            with: view.window!,
+            duration: 0.3,
+            options: .transitionCrossDissolve,
+            animations: {
+            self.view.window?.overrideUserInterfaceStyle = colorUserDefaults.colorshared.theme.getUserInterfaceStyle()
+            },
+            completion: nil
+        )
     }
     
     
     @IBAction func darkModePressed(_ sender: Any) {
         colorUserDefaults.colorshared.theme = .dark
-        self.view.window?.overrideUserInterfaceStyle = colorUserDefaults.colorshared.theme.getUserInterfaceStyle()
+        UIView.transition(
+            with: view.window!,
+            duration: 0.3,
+            options: .transitionCrossDissolve,
+            animations: {
+            self.view.window?.overrideUserInterfaceStyle = colorUserDefaults.colorshared.theme.getUserInterfaceStyle()
+            },
+            completion: nil
+        )
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
