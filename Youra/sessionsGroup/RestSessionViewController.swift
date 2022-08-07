@@ -13,7 +13,7 @@ class RestSessionViewController: UIViewController {
     var backgrounds: [Background] = []
     var quotes: [Quote] = []
     var musics: [Music] = []
-    var song = AVAudioPlayer()
+    var song = AVPlayer()
     
     @IBOutlet weak var circularView: UIView!
     @IBOutlet weak var restTimerLabel: UILabel!
@@ -139,7 +139,7 @@ class RestSessionViewController: UIViewController {
     
     @IBAction func pauseButtonPressed(_ sender: Any) {
         
-        if song.isPlaying {
+        if ((song.rate != 0) && (song.error == nil)) {
             
             song.pause()
             isPaused = true
@@ -152,13 +152,18 @@ class RestSessionViewController: UIViewController {
         }
     }
     
+    
     func playSong() {
         
         do {
             
-            song = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: musics[musicRandNumber].title, ofType: "mp3")!))
+            if let url = URL(string: "https://sheltered-savannah-50272.herokuapp.com/uploads/02_c390e92137.mp3") {
+                song = AVPlayer(url: url)
+                    }
+//            song = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: musics[musicRandNumber].title, ofType: "mp3")!))
             
-            song.prepareToPlay()
+            
+            song.play()
             
             let audioSession = AVAudioSession.sharedInstance()
             do {
@@ -170,8 +175,6 @@ class RestSessionViewController: UIViewController {
                 print(sessionError)
             }
             
-        } catch let songPlayerError {
-            print(songPlayerError)
         }
     }
     
@@ -218,7 +221,7 @@ class RestSessionViewController: UIViewController {
             AppHelper.initSessionData(sessionData: sessionData)
             print("Rest Session")
             print(AppHelper.getSessionData())
-            self.song.stop()
+            self.song.replaceCurrentItem(with: nil)
             self.performSegue(withIdentifier: "restMoodSegue", sender: nil)
         }
     }
@@ -253,7 +256,7 @@ class RestSessionViewController: UIViewController {
             title: "Yes",
             style: .default,
             handler: { action in
-                self.song.stop()
+                self.song.replaceCurrentItem(with: nil)
                 self.timer.invalidate()
                 self.performSegue(withIdentifier: "restMoodSegue", sender: nil)
             })
